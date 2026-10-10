@@ -1,12 +1,11 @@
 # ATINGERE
-Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, offline, 137 de limbi.
+Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 
 **Orice carte, în braille tactil sau în audiobook — dintr-un singur fișier HTML, fără cont, fără server.**
 
 *One-file, offline web app that turns a book into touch-screen braille (vibration, for deaf-blind readers) or a TTS audiobook (for blind readers). 130+ languages, Romanian first.*
 
-**Aplicația live:** `https://<utilizator>.github.io/atingere/` *(după activarea GitHub Pages)*
-Sau descarcă `index.html` și deschide-l în browser. Merge offline.
+**Aplicația live:** momentan nu există o adresă publică confirmată (GitHub Pages nu este activat sau adresa nu a fost verificată la audit). Descarcă `index.html` și deschide-l în browser; merge offline pentru funcțiile de bază.
 
 ## Pentru cine
 - **Persoane surdo-oarbe:** cartea devine braille pe ecranul tactil. Fiecare celulă are 6 puncte; punctele ridicate se simt prin vibrație sub deget. Există și vibrații automate, în ritm de celule.
@@ -36,7 +35,14 @@ OCR (motorul și datele limbii se descarcă o dată), comenzile vocale (serviciu
 Dacă un cuvânt apare cu braille greșit, folosește în aplicație **⋯ → Raportează o greșeală de braille**, apoi atașează fișierul într-un *Issue*. Cel mai util este raportul unui cititor nativ de braille, cu limba, cuvântul și forma corectă.
 
 ## Confidențialitate
-Nu există server, cont, statistici sau urmărire. Cărțile rămân în browser. Progresul și semnele de carte se salvează local pe dispozitiv.
+Aplicația nu are server propriu, cont, statistici sau urmărire; cărțile rămân în browser, iar progresul și semnele de carte se salvează local. **Dar unele funcții opționale contactează terți:**
+- **OCR** (imagini/PDF scanat): la prima folosire încarcă `tesseract.js` de pe `cdn.jsdelivr.net` (fără verificare de integritate SRI) și datele limbii de pe `raw.githubusercontent.com`; aceste servere văd adresa IP, nu textul cărții.
+- **Traducere automată** (opțională): încarcă `transformers.js` de pe `cdn.jsdelivr.net` și modelul (~700 MB) de pe `huggingface.co`; traducerea rulează local.
+- **Comenzi vocale**: folosesc recunoașterea vocală a browserului (`SpeechRecognition`); în Chrome, de exemplu, audio este trimis serviciului de voce al furnizorului browserului.
+- Linkurile din catalogul de cărți duc la site-uri externe, doar la click.
+Fără aceste funcții, aplicația nu face cereri de rețea.
 
 ## Licență
-Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf.js și altele) au licențe proprii; vezi [NOTICE.md](NOTICE.md). Unele intrări de acolo sunt marcate „de verificat" și trebuie clarificate înainte de publicare.
+Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf.js și altele) au licențe proprii; vezi [NOTICE.md](NOTICE.md). Unele intrări de acolo sunt marcate „de verificat" (tabelul kanji derivat din pykakasi, posibil GPL-3.0; tabelele chineză/cantoneză cu sursă nedocumentată; modelul NLLB-200, CC-BY-NC, descărcat la cerere) și trebuie clarificate de autor înainte ca licența MIT să fie considerată definitivă.
+
+Audit: 2026-10-10
