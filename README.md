@@ -22,7 +22,7 @@ Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille 
 - **Formate de intrare:** EPUB, TXT, HTML, DOCX, PDF (cu text, offline), BRF/BRL și texte Unicode braille, PDF-uri scanate și imagini PNG/JPG/WebP (prin OCR).
 - **Braille:** peste 130 de limbi; română extinsă, cu cod propriu. Grad 1 pentru toate, **grad 2** pentru 10 limbi (en, fr, de, pt, no, da, hu, ga, cy, ur) prin liblouis.
 - **Citire tactilă:** celulă, cuvânt, paragraf, capitol; două celule alăturate; mod învățare cu teste; scriere Perkins.
-- **Instrumente:** semne de carte, căutare, repetarea paragrafului, rezumat extractiv local, pagina învățătorului (text + braille), oprire de urgență (scuturare, Esc), contrast mare, text mărit, comenzi vocale (în română).
+- **Instrumente:** semne de carte, căutare, repetarea paragrafului, rezumat extractiv local, pagina învățătorului (text + braille, cu buton de tipărire și stil de tipărire dedicat), oprire de urgență (scuturare, Esc), contrast mare, text mărit, comenzi vocale (în română).
 - **Export:** `.brf` (40 × 25) și text Unicode braille.
 - **Catalog:** surse gratuite de cărți în română și în alte limbi, plus surse de cărți deja în braille.
 - **Traducere automată** în română (opțional, model descărcat o dată, ~700 MB).
@@ -56,6 +56,10 @@ Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf
 Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
 
 ## Istoric / Changelog
+
+### 11 octombrie 2026 (runda 6)
+- Adăugat: buton „Tipărește” în pagina învățătorului, cu stil de tipărire care păstrează doar braille-ul și textul paragrafului; respectă `prefers-reduced-motion` și `prefers-contrast: more`.
+- Neschimbat: fără `script-src` în CSP (necesită `unsafe-eval` pentru liblouis, workere/WASM de pe jsDelivr pentru OCR și traducere, imposibil de verificat fără rețea).
 
 ### 11 octombrie 2026
 - Reparat: butoanele de export (.BRF și text Unicode braille) sunt acum vizibile direct pe ecranul principal (pasul 3), nu într-o secțiune restrânsă.
