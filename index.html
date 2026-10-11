@@ -43,6 +43,7 @@ input[type=checkbox]{width:26px;height:26px;vertical-align:middle;margin-right:1
 input[type=range]{width:100%;height:36px;accent-color:var(--acc)}
 label.f{display:block;margin:12px 0 4px;color:var(--dim);font-size:.9rem}
 .muted{color:var(--dim)}
+.btn:disabled{opacity:.55;cursor:wait}
 .warn{background:#3a1d1d;border:1px solid var(--bad);color:#ffd5d5;padding:10px 14px;margin:8px 12px;border-radius:12px;font-size:.95rem}
 [hidden]{display:none!important}.trp{border:2px dashed var(--line);border-radius:16px;padding:6px 14px 10px;margin:14px 0}.trp h3{margin:8px 0 2px}.stats{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--dim);margin:6px 0 10px;font-size:.95rem}
 .bar{display:flex;align-items:center;gap:8px;padding:8px 10px;padding-top:max(8px,env(safe-area-inset-top));background:#101018;border-bottom:1px solid var(--line)}
@@ -133,7 +134,8 @@ dialog:not([open]){display:none!important}
    <h1>ATINGERE</h1>
    <span class="tag">Orice carte → braille pe ecranul tactil (surdo-orbi) sau audiobook (nevăzători)</span>
   </header>
-  <p class="muted" id="valNote"><strong>Atenție:</strong> tabelele braille nu au fost validate de cititori nativi, iar aplicația nu a fost testată pe dispozitive tactile reale; pentru uz important, verifică rezultatul cu un specialist. Funcțiile OCR, comenzi vocale și traducere au nevoie de internet. <em>Notice: braille tables are not validated by native readers and the app was not tested on real touch devices; OCR, voice commands and translation need internet.</em></p>
+  <p class="muted" id="valNote"><strong>Atenție:</strong> tabelele braille nu au fost validate de cititori nativi, iar aplicația nu a fost testată pe dispozitive tactile reale; pentru uz important, verifică rezultatul cu un specialist. Funcțiile OCR, comenzi vocale și traducere au nevoie de internet.</p>
+  <details class="muted" id="valNoteEn"><summary lang="en">English</summary><p lang="en"><em>Notice: braille tables are not validated by native readers and the app was not tested on real touch devices; OCR, voice commands and translation need internet.</em></p></details>
 
   <section class="card">
    <h2>1. Alege o carte</h2>
@@ -174,6 +176,7 @@ dialog:not([open]){display:none!important}
    <h3 style="margin-top:18px">3. Sau exportă pentru embosare / afișaj braille</h3>
    <button id="exBrf" class="btn">Descarcă .BRF (40 celule × 25 rânduri)</button>
    <button id="exTxt" class="btn">Descarcă text Unicode braille (.txt)</button>
+   <p class="muted" id="exNote">.BRF folosește codificarea ASCII braille (Braille ASCII), cu pagini separate prin salt de pagină; textul Unicode păstrează punctele braille ca atare.</p>
   </section>
 
   <section class="card">
@@ -2500,13 +2503,20 @@ function download(name,data,type){
   setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 }
 const slug=s=>(s||'carte').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').toLowerCase().slice(0,50)||'carte';
+let _exBusy=false;
 async function doExport(kind){
-  if(!book)return;
-  await ensureBraille();
-  const pages=layoutBraille(br,{width:40,rows:25});
-  if(kind==='brf')download(slug(book.title)+'.brf',pagesToText(pages,'brf'),'text/plain');
-  else download(slug(book.title)+'-braille.txt','\uFEFF'+pagesToText(pages,'uni'),'text/plain;charset=utf-8');
-  toast(pages.length+' pagini braille exportate');
+  if(!book||_exBusy)return;
+  _exBusy=true;const bs=[$('#exBrf'),$('#exTxt')];bs.forEach(b=>b.disabled=true);
+  try{
+    await ensureBraille();
+    if(!br)throw new Error('textul nu a putut fi tradus în braille');
+    const pages=layoutBraille(br,{width:40,rows:25});
+    if(kind==='brf')download(slug(book.title)+'.brf',pagesToText(pages,'brf'),'text/plain');
+    else download(slug(book.title)+'-braille.txt','\uFEFF'+pagesToText(pages,'uni'),'text/plain;charset=utf-8');
+    toast(pages.length+' pagini braille exportate');
+  }catch(e){
+    setStatus('Exportul a eșuat: '+(e&&e.message||e));toast('Exportul a eșuat',3000);
+  }finally{_exBusy=false;bs.forEach(b=>b.disabled=false);}
 }
 $('#exBrf').addEventListener('click',()=>doExport('brf'));
 $('#exTxt').addEventListener('click',()=>doExport('uni'));

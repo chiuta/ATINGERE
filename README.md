@@ -57,6 +57,11 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 
 ## Istoric / Changelog
 
+### 11 octombrie 2026 (runda 7)
+- Reparat: exportul .BRF/.txt prinde acum erorile (mesaj „Exportul a eșuat” în loc de eșec tăcut) și dezactivează butoanele cât timp rulează, ca să nu pornească două descărcări deodată; nu s-a putut reproduce un eșec de descărcare în Chromium (descărcările funcționează), deci cauza raportată rămâne neconfirmată.
+- Îmbunătățit: avertismentul de pe primul ecran este scurt în română, cu varianta engleză (marcată `lang="en"`) într-un panou „English”; notă despre codificarea ASCII braille a exportului .BRF.
+- Neschimbat: fără `script-src` în CSP și fără SRI (liblouis/`new Function`, workere și WASM de pe jsDelivr; nu pot fi verificate fără rețea); licențele rămân decizia autorului.
+
 ### 11 octombrie 2026 (runda 6)
 - Adăugat: buton „Tipărește” în pagina învățătorului, cu stil de tipărire care păstrează doar braille-ul și textul paragrafului; respectă `prefers-reduced-motion` și `prefers-contrast: more`.
 - Neschimbat: fără `script-src` în CSP (necesită `unsafe-eval` pentru liblouis, workere/WASM de pe jsDelivr pentru OCR și traducere, imposibil de verificat fără rețea).
