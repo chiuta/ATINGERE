@@ -4,6 +4,8 @@
 
 ![ATINGERE — captură de ecran / screenshot](screenshot.png)
 
+**Ultima actualizare:** 11 octombrie 2026
+
 Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 
 **Orice carte, în braille tactil sau în audiobook — dintr-un singur fișier HTML, fără cont, fără server.**
@@ -52,3 +54,11 @@ Fără aceste funcții, aplicația nu face cereri de rețea.
 Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf.js și altele) au licențe proprii; vezi [NOTICE.md](NOTICE.md). Unele intrări de acolo sunt marcate „de verificat" (tabelul kanji derivat din pykakasi, posibil GPL-3.0; tabelele chineză/cantoneză cu sursă nedocumentată; modelul NLLB-200, CC-BY-NC, descărcat la cerere) și trebuie clarificate de autor înainte ca licența MIT să fie considerată definitivă.
 
 Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
+
+## Istoric / Changelog
+
+### 11 octombrie 2026
+- Reparat: butoanele de export (.BRF și text Unicode braille) sunt acum vizibile direct pe ecranul principal (pasul 3), nu într-o secțiune restrânsă.
+- Reparat: câmpul de căutare a limbii avea fundal alb cu text deschis (contrast insuficient); ecranele Braille, Audio, Învață și Scrie au acum titlu de nivel 1 (0 violări axe-core la 1280 și 360 px, inclusiv după încărcarea unui text).
+- Neschimbat (decizia autorului): licențele componentelor pykakasi/NLLB/liblouis rămân de clarificat; `new Function` (încărcarea liblouis) este păstrat, necesar pentru braille grad 2.
+

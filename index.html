@@ -38,7 +38,7 @@ button{cursor:pointer}
 #file:focus-visible+label{outline:4px solid #fff;outline-offset:3px}
 summary{cursor:pointer;font-weight:600;padding:6px 0}
 textarea{width:100%;background:#0e0e14;border:1px solid var(--line);border-radius:12px;padding:10px}
-select,input[type=text]{background:#0e0e14;border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%;min-height:48px}
+select,input[type=text],input[type=search]{color:inherit;background:#0e0e14;border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%;min-height:48px}
 input[type=checkbox]{width:26px;height:26px;vertical-align:middle;margin-right:10px;accent-color:var(--acc)}
 input[type=range]{width:100%;height:36px;accent-color:var(--acc)}
 label.f{display:block;margin:12px 0 4px;color:var(--dim);font-size:.9rem}
@@ -46,7 +46,7 @@ label.f{display:block;margin:12px 0 4px;color:var(--dim);font-size:.9rem}
 .warn{background:#3a1d1d;border:1px solid var(--bad);color:#ffd5d5;padding:10px 14px;margin:8px 12px;border-radius:12px;font-size:.95rem}
 [hidden]{display:none!important}.trp{border:2px dashed var(--line);border-radius:16px;padding:6px 14px 10px;margin:14px 0}.trp h3{margin:8px 0 2px}.stats{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--dim);margin:6px 0 10px;font-size:.95rem}
 .bar{display:flex;align-items:center;gap:8px;padding:8px 10px;padding-top:max(8px,env(safe-area-inset-top));background:#101018;border-bottom:1px solid var(--line)}
-.bar .ttl{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.bar .ttl{font-size:1rem;letter-spacing:normal;margin:0;flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .ico{min-width:52px;height:52px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:24px;line-height:1}
 .stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:10px}
 #pad,#pad2,#lpad{height:100%;max-height:60vh;aspect-ratio:2/3;max-width:88vw;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr));touch-action:none;user-select:none;-webkit-user-select:none;border-radius:26px;border:2px solid var(--line);background:#0e0e15;overflow:hidden}
@@ -160,11 +160,9 @@ dialog a.btn{text-decoration:none}
    <h2 style="margin-top:18px">2. Cum vrei să o citești?</h2>
    <button id="goBraille" class="btn big primary">⠃ Braille tactil<small>pentru persoane surdo-oarbe — vibrații și puncte pe ecran</small></button>
    <button id="goAudio" class="btn big alt">🔊 Audiobook<small>pentru nevăzători — voce de sinteză, cu reluare automată</small></button>
-   <details>
-    <summary>Exportă pentru embosare / afișaj braille</summary>
-    <button id="exBrf" class="btn">Descarcă .BRF (40 celule × 25 rânduri)</button>
-    <button id="exTxt" class="btn">Descarcă text Unicode braille (.txt)</button>
-   </details>
+   <h3 style="margin-top:18px">3. Sau exportă pentru embosare / afișaj braille</h3>
+   <button id="exBrf" class="btn">Descarcă .BRF (40 celule × 25 rânduri)</button>
+   <button id="exTxt" class="btn">Descarcă text Unicode braille (.txt)</button>
   </section>
 
   <section class="card">
@@ -248,7 +246,7 @@ dialog a.btn{text-decoration:none}
 <div id="vBraille" class="view fixed">
  <header class="bar">
   <button id="brBack" class="ico" aria-label="Înapoi la carte">←</button>
-  <div class="ttl" id="brTitle"></div>
+  <h1 class="ttl" id="brTitle"></h1>
   <button id="brStop" class="ico" aria-label="Oprește imediat vibrațiile">■</button>
   <button id="brTools" class="ico" aria-label="Instrumente: semne de carte, căutare, repetare">⋯</button>
   <button id="brChap" class="ico" aria-label="Capitole">☰</button>
@@ -271,7 +269,7 @@ dialog a.btn{text-decoration:none}
 
 <!-- ============ ÎNVAȚĂ ============ -->
 <div id="vLearn" class="view fixed">
- <header class="bar"><button id="lnBack" class="ico" aria-label="Înapoi">←</button><div class="ttl">Învață braille</div><button id="lnStop" class="ico" aria-label="Oprește imediat vibrațiile">■</button></header>
+ <header class="bar"><button id="lnBack" class="ico" aria-label="Înapoi">←</button><h1 class="ttl">Învață braille</h1><button id="lnStop" class="ico" aria-label="Oprește imediat vibrațiile">■</button></header>
  <div class="lnbox"><label class="f" for="lnLesson">Lecția</label><select id="lnLesson"></select>
   <label class="f"><input type="checkbox" id="lnBlind" checked> În test, ascunde punctele de pe ecran (doar tactil)</label></div>
  <div class="stage"><div id="lpad" role="img" aria-label="Celulă de exersat"></div></div>
@@ -287,7 +285,7 @@ dialog a.btn{text-decoration:none}
 
 <!-- ============ SCRIE ============ -->
 <div id="vWrite" class="view fixed">
- <header class="bar"><button id="wrBack" class="ico" aria-label="Înapoi">←</button><div class="ttl">Scrie în braille</div></header>
+ <header class="bar"><button id="wrBack" class="ico" aria-label="Înapoi">←</button><h1 class="ttl">Scrie în braille</h1></header>
  <div class="wrbody">
   <label class="f" for="wrLang">Limba codului braille</label><select id="wrLang"></select>
   <label class="f"><input type="checkbox" id="wrPerkins" checked> Tastatură Perkins: F D S = punctele 1 2 3, J K L = 4 5 6 (apasă împreună, apoi eliberează); Spațiu, Backspace, Enter</label>
@@ -305,7 +303,7 @@ dialog a.btn{text-decoration:none}
 <div id="vAudio" class="view fixed">
  <header class="bar">
   <button id="auBack" class="ico" aria-label="Înapoi la carte">←</button>
-  <div class="ttl" id="auTitle"></div>
+  <h1 class="ttl" id="auTitle"></h1>
   <button id="auTools" class="ico" aria-label="Instrumente: semne de carte, căutare, repetare">⋯</button>
   <button id="auChap" class="ico" aria-label="Capitole">☰</button>
   <button id="auSet" class="ico" aria-label="Setări">⚙</button>
