@@ -4,7 +4,7 @@
 
 ![ATINGERE — captură de ecran / screenshot](screenshot.png)
 
-**Ultima actualizare:** 11 octombrie 2026
+**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
 
 Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 
@@ -56,6 +56,9 @@ Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf
 Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
 
 ## Istoric / Changelog
+
+### 1.0.0 — 2026-10-12
+- Versiunea și data ultimei actualizări sunt afișate în aplicație (subsol).
 
 ### 11 octombrie 2026 (runda 7)
 - Reparat: exportul .BRF/.txt prinde acum erorile (mesaj „Exportul a eșuat” în loc de eșec tăcut) și dezactivează butoanele cât timp rulează, ca să nu pornească două descărcări deodată; nu s-a putut reproduce un eșec de descărcare în Chromium (descărcările funcționează), deci cauza raportată rămâne neconfirmată.

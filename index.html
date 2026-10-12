@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0a0a0f">
+<meta name="application-version" content="1.0.0">
+<meta name="last-updated" content="2026-10-12">
 <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>ATINGERE — cărți în braille tactil și audiobook</title>
@@ -85,6 +87,7 @@ dialog .list button.cur{border-color:var(--acc);color:var(--acc)}
 .dots-in{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .dots-in input{text-align:center;padding:8px 2px}
 #toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:#000c;border:1px solid var(--line);padding:10px 16px;border-radius:12px;z-index:50;display:none;max-width:90vw;text-align:center}
+footer .appver{display:block;margin-top:6px}
 footer{color:var(--dim);font-size:.85rem;padding:6px 4px 26px}
 .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:6px;margin:8px 0}.rg span{display:flex;flex-direction:column;align-items:center;border:1px solid var(--line);border-radius:10px;padding:4px 2px;background:#1d1d27}.rg b{font-size:30px;line-height:1.1}.rg i{font-style:normal;font-weight:700}.rg small{opacity:.7;font-size:11px}.bz{font-size:22px}.rc{font-size:18px;line-height:1.3;background:#1d1d27;padding:8px 12px;border-radius:10px;display:inline-block}#refs dt{font-weight:700;margin-top:8px}#refs dd{margin:2px 0 0 0}
 .lk{padding-left:18px}.lk li{margin:6px 0}.lk a{color:inherit;text-decoration:underline}
@@ -252,7 +255,7 @@ dialog:not([open]){display:none!important}
    <div id="libList"></div>
    <p class="muted">Am verificat existența surselor marcate „verificat” (octombrie 2026); celelalte nu au putut fi deschise din mediul meu, deci adresa sau oferta s-au putut schimba. PDF-urile cu text se citesc offline; PDF-urile scanate și pozele paginilor se citesc prin OCR (necesită internet). Cele scanate (imagini) se citesc cu OCR, care are nevoie de internet o singură dată.</p>
   </section>
-  <footer>Aplicație dintr-un singur fișier, rulează local, fără cont și fără urmărire. Cititorul de PDF (pdf.js, Mozilla, Apache-2.0) și motorul braille de grad 2 (liblouis, LGPL 2.1+) sunt încorporate. Traducerea automată, OCR-ul (motorul și datele limbii se descarcă o dată) și comenzile vocale (serviciul browserului) cer internet.</footer>
+  <footer>Aplicație dintr-un singur fișier, rulează local, fără cont și fără urmărire. Cititorul de PDF (pdf.js, Mozilla, Apache-2.0) și motorul braille de grad 2 (liblouis, LGPL 2.1+) sunt încorporate. Traducerea automată, OCR-ul (motorul și datele limbii se descarcă o dată) și comenzile vocale (serviciul browserului) cer internet. <span class="appver" id="app-version">v 1.0.0 · 2026-10-12</span></footer>
  </div>
 </div>
 
