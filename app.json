@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "slug": "atingere",
+  "name": "ATINGERE — cărți în braille tactil și audiobook",
+  "version": "1.1.0",
+  "updated": "2026-10-14",
+  "description": "",
+  "egress": [
+    {
+      "host": "cdn.jsdelivr.net",
+      "via": [
+        "import()",
+        "src="
+      ]
+    }
+  ],
+  "permissions": [
+    "speechSynthesis",
+    "SpeechRecognition",
+    "clipboard",
+    "serviceWorker",
+    "indexedDB",
+    "localStorage"
+  ],
+  "storageKeys": [],
+  "sizeBytes": 1647399,
+  "sha256": "178c9c94b8595f96ea9479b1988245bd9f7710a2bfdc1ad8cf8475f596c37008",
+  "csp": {
+    "present": true,
+    "directives": {
+      "object-src": "'none'",
+      "base-uri": "'none'",
+      "form-action": "'none'",
+      "manifest-src": "'self'",
+      "worker-src": "'self'",
+      "img-src": "'self'"
+    },
+    "scriptInline": "nerestricționat",
+    "connect": "(nerestricționat)"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [
+      "ro",
+      "en",
+      "fr",
+      "it",
+      "es",
+      "pt",
+      "hu",
+      "de"
+    ],
+    "pwa": {
+      "manifest": true,
+      "serviceWorker": true
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "selfSerializing": false
+}

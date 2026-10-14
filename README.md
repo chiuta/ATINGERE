@@ -4,7 +4,7 @@
 
 ![ATINGERE — captură de ecran / screenshot](screenshot.png)
 
-**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 
@@ -55,7 +55,18 @@ Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf
 
 Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
 
+## Funcții noi (v1.1.0)
+
+- **Etichetă de transparență** (clic pe `v 1.1.0 · 2026-10-14` din subsol, kit comun): arată ce stocare locală folosește aplicația (progres, semne de carte, setări) și că funcțiile de bază nu fac cereri de rețea.
+- **Copie de siguranță .fff.json** a progresului de lectură, semnelor de carte și setărilor (export/import, opțional criptat cu parolă; cărțile în sine nu sunt incluse).
+- **Conversia în braille, citirea tactilă și audiobook-ul sunt neschimbate**: față de 1.0.0 s-au adăugat doar blocul kitului și versiunea. CSP-ul nu a fost modificat (rămâne fără `script-src`, din motivele din istoric). Nu s-a adăugat nimic care să atingă tabelele braille.
+- Textele noi sunt în ro, en, fr, it, es, pt, hu, de; traducerile sunt automate și neverificate nativ.
+- Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
+
 ## Istoric / Changelog
+
+### 1.1.0 — 2026-10-14
+- Nou: etichetă de transparență și copie .fff.json (kit comun). Conversia braille neschimbată.
 
 ### 1.0.0 — 2026-10-12
 - Versiunea și data ultimei actualizări sunt afișate în aplicație (subsol).
