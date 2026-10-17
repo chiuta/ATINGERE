@@ -3,6 +3,8 @@
 `index.html` este un singur fișier care conține, pe lângă codul propriu (MIT, vezi `LICENSE`), componente terțe.
 Fiecare își păstrează licența. Starea verificării este notată sincer mai jos.
 
+Licența MIT din `LICENSE` se aplică codului scris pentru ATINGERE. Componentele terțe încorporate sau descărcate la cerere își păstrează licențele proprii (mai jos).
+
 ## Încorporate în fișier
 
 | Componentă | Rol | Licență | Stare |
