@@ -4,7 +4,7 @@
 
 ![ATINGERE — captură de ecran / screenshot](screenshot.png)
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+**Versiune:** 1.1.1 · **Ultima actualizare:** 18 octombrie 2026
 
 Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 
@@ -64,6 +64,9 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
 
 ## Istoric / Changelog
+
+### 1.1.1 — 2026-10-18
+- Reparat: detectarea limbii nu mai votează catalana pentru orice punct median „·” (folosit în titluri, ex. Nota Zero); rămâne doar geminata „l·l”. Fișierele .md românești cu „·” sunt acum recunoscute ca `ro`.
 
 ### 1.1.0 — 2026-10-14
 - Nou: etichetă de transparență și copie .fff.json (kit comun). Conversia braille neschimbată.

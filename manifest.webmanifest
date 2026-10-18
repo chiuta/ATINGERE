@@ -1,6 +1,7 @@
 {
   "name": "ATINGERE",
   "short_name": "ATINGERE",
+  "description": "Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, fără cont.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
