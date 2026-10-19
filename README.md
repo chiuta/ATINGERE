@@ -1,90 +1,91 @@
 # ATINGERE
 
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
+
+**Version:** 1.1.1 · **Last updated:** 2026-10-18
+
 **Live / demo:** https://chiuta.github.io/ATINGERE/
 
-![ATINGERE — captură de ecran / screenshot](screenshot.png)
+![ATINGERE — screenshot](screenshot.png)
 
-**Versiune:** 1.1.1 · **Ultima actualizare:** 18 octombrie 2026
+Converts any book (EPUB, TXT, HTML, DOCX, PDF, BRF, images) into tactile braille for deaf-blind people or into an audiobook for blind people. A single HTML file, 137 languages and codes (grade 1 braille); the OCR, voice commands and translation features need internet.
 
-Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
-
-**Orice carte, în braille tactil sau în audiobook — dintr-un singur fișier HTML, fără cont, fără server.**
+**Any book, as tactile braille or as an audiobook — from a single HTML file, with no account, no server.**
 
 *One-file, offline web app that turns a book into touch-screen braille (vibration, for deaf-blind readers) or a TTS audiobook (for blind readers). 130+ languages, Romanian first.*
 
-**Aplicația live:** momentan nu există o adresă publică confirmată (GitHub Pages nu este activat sau adresa nu a fost verificată la audit). Descarcă `index.html` și deschide-l în browser; merge offline pentru funcțiile de bază.
+**Live app:** there is currently no confirmed public address (GitHub Pages is not enabled or the address was not verified during the audit). Download `index.html` and open it in a browser; the basic features work offline.
 
-## Pentru cine
-- **Persoane surdo-oarbe:** cartea devine braille pe ecranul tactil. Fiecare celulă are 6 puncte; punctele ridicate se simt prin vibrație sub deget. Există și vibrații automate, în ritm de celule.
-- **Persoane nevăzătoare:** cartea devine audiobook cu sinteza vocală a dispozitivului, cu reluare automată, viteză reglabilă și temporizator de somn.
+## Who it is for
+- **Deaf-blind people:** the book becomes braille on the touch screen. Each cell has 6 dots; the raised dots are felt as vibration under the finger. There are also automatic vibrations, at the rhythm of the cells.
+- **Blind people:** the book becomes an audiobook using the device's speech synthesis, with automatic resume, adjustable speed and a sleep timer.
 
-## Ce face
-- **Formate de intrare:** EPUB, TXT, HTML, DOCX, PDF (cu text, offline), BRF/BRL și texte Unicode braille, PDF-uri scanate și imagini PNG/JPG/WebP (prin OCR).
-- **Braille:** peste 130 de limbi; română extinsă, cu cod propriu. Grad 1 pentru toate, **grad 2** pentru 10 limbi (en, fr, de, pt, no, da, hu, ga, cy, ur) prin liblouis.
-- **Citire tactilă:** celulă, cuvânt, paragraf, capitol; două celule alăturate; mod învățare cu teste; scriere Perkins.
-- **Instrumente:** semne de carte, căutare, repetarea paragrafului, rezumat extractiv local, pagina învățătorului (text + braille, cu buton de tipărire și stil de tipărire dedicat), oprire de urgență (scuturare, Esc), contrast mare, text mărit, comenzi vocale (în română).
-- **Export:** `.brf` (40 × 25) și text Unicode braille.
-- **Catalog:** surse gratuite de cărți în română și în alte limbi, plus surse de cărți deja în braille.
-- **Traducere automată** în română (opțional, model descărcat o dată, ~700 MB).
+## What it does
+- **Input formats:** EPUB, TXT, HTML, DOCX, PDF (with text, offline), BRF/BRL and Unicode braille texts, scanned PDFs and PNG/JPG/WebP images (via OCR).
+- **Braille:** over 130 languages; extended Romanian, with its own code. Grade 1 for all, **grade 2** for 10 languages (en, fr, de, pt, no, da, hu, ga, cy, ur) through liblouis.
+- **Tactile reading:** cell, word, paragraph, chapter; two adjacent cells; learning mode with tests; Perkins writing.
+- **Tools:** bookmarks, search, paragraph repeat, local extractive summary, the teacher page (text + braille, with a print button and a dedicated print style), emergency stop (shaking, Esc), high contrast, enlarged text, voice commands (in Romanian).
+- **Export:** `.brf` (40 × 25) and Unicode braille text.
+- **Catalogue:** free sources of books in Romanian and other languages, plus sources of books already in braille.
+- **Automatic translation** into Romanian (optional, model downloaded once, ~700 MB).
 
-## Ce are nevoie de internet
-OCR (motorul și datele limbii se descarcă o dată), comenzile vocale (serviciul browserului) și traducerea automată. Restul funcționează offline.
+## What needs internet
+OCR (the engine and the language data are downloaded once), voice commands (the browser's service) and automatic translation. Everything else works offline.
 
-## Limite — citește înainte de utilizare serioasă
-(Avertismentul de mai jos este afișat și pe primul ecran al aplicației.)
-- Tabelele braille **nu au fost validate de cititori nativi de braille** și aplicația **nu a fost testată pe dispozitive tactile reale** (vibrații, ecran) sau cu cititoare de ecran. Testele automate verifică consecvența, nu faptul că textul e corect pentru cititor.
-- Pentru chineză, cantoneză, japoneză și coreeană braille-ul se obține aproximativ, din pronunție; unele citiri pot greși.
-- Grad 2 vine din liblouis 3.2.0 (tabele vechi). Pentru română nu există grad 2 standardizat; se folosește grad 1.
-- iPhone/iPad nu permit vibrații din browser. Folosește Android + Chrome sau exportă `.brf`.
-- Comenzile vocale și OCR-ul au fost verificate cu simulări, nu cu voce sau scanări reale pe internet.
-- Neimplementat: afișaj braille hardware (WebHID), voce neurală offline, aplicație instalabilă (PWA).
+## Limits — read before serious use
+(The warning below is also shown on the app's first screen.)
+- The braille tables **have not been validated by native braille readers** and the app **has not been tested on real touch devices** (vibration, screen) or with screen readers. The automated tests check consistency, not whether the text is correct for the reader.
+- For Chinese, Cantonese, Japanese and Korean the braille is obtained approximately, from pronunciation; some readings may be wrong.
+- Grade 2 comes from liblouis 3.2.0 (old tables). There is no standardized grade 2 for Romanian; grade 1 is used.
+- iPhone/iPad do not allow vibration from the browser. Use Android + Chrome or export `.brf`.
+- Voice commands and OCR were verified with simulations, not with real voice or scans over the internet.
+- Not implemented: hardware braille display (WebHID), offline neural voice, installable app (PWA).
 
-## Rapoarte de greșeli
-Dacă un cuvânt apare cu braille greșit, folosește în aplicație **⋯ → Raportează o greșeală de braille**, apoi atașează fișierul într-un *Issue*. Cel mai util este raportul unui cititor nativ de braille, cu limba, cuvântul și forma corectă.
+## Error reports
+If a word appears with wrong braille, use **⋯ → Report a braille error** in the app, then attach the file to an *Issue*. The most useful report is one from a native braille reader, with the language, the word and the correct form.
 
-## Confidențialitate
-Aplicația nu are server propriu, cont, statistici sau urmărire; cărțile rămân în browser, iar progresul și semnele de carte se salvează local. **Dar unele funcții opționale contactează terți:**
-- **OCR** (imagini/PDF scanat): la prima folosire încarcă `tesseract.js` de pe `cdn.jsdelivr.net` (fără verificare de integritate SRI) și datele limbii de pe `raw.githubusercontent.com`; aceste servere văd adresa IP, nu textul cărții.
-- **Traducere automată** (opțională): încarcă `transformers.js` de pe `cdn.jsdelivr.net` și modelul (~700 MB) de pe `huggingface.co`; traducerea rulează local.
-- **Comenzi vocale**: folosesc recunoașterea vocală a browserului (`SpeechRecognition`); în Chrome, de exemplu, audio este trimis serviciului de voce al furnizorului browserului.
-- Linkurile din catalogul de cărți duc la site-uri externe, doar la click.
-Fără aceste funcții, aplicația nu face cereri de rețea.
+## Privacy
+The app has no server of its own, no account, no statistics or tracking; books stay in the browser, and progress and bookmarks are saved locally. **But some optional features contact third parties:**
+- **OCR** (images/scanned PDF): on first use it loads `tesseract.js` from `cdn.jsdelivr.net` (without an SRI integrity check) and the language data from `raw.githubusercontent.com`; these servers see the IP address, not the book's text.
+- **Automatic translation** (optional): loads `transformers.js` from `cdn.jsdelivr.net` and the model (~700 MB) from `huggingface.co`; the translation runs locally.
+- **Voice commands**: they use the browser's speech recognition (`SpeechRecognition`); in Chrome, for example, the audio is sent to the browser vendor's voice service.
+- The links in the book catalogue lead to external sites, only on click.
+Without these features, the app makes no network requests.
 
-## Licență
-Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf.js și altele) au licențe proprii; vezi [NOTICE.md](NOTICE.md). Unele intrări de acolo sunt marcate „de verificat" (tabelul kanji derivat din pykakasi, posibil GPL-3.0; tabelele chineză/cantoneză cu sursă nedocumentată; modelul NLLB-200, CC-BY-NC, descărcat la cerere) și trebuie clarificate de autor înainte ca licența MIT să fie considerată definitivă.
+## License
+Own code: MIT (see [LICENSE](LICENSE)). The third-party components (liblouis, pdf.js and others) have their own licenses; see [NOTICE.md](NOTICE.md). Some entries there are marked "to be verified" (the kanji table derived from pykakasi, possibly GPL-3.0; the Chinese/Cantonese tables with undocumented source; the NLLB-200 model, CC-BY-NC, downloaded on request) and must be clarified by the author before the MIT license is considered final.
 
-Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
+Audit: 2026-10-10; round 2 (2026-10-11): validation warning on the first screen; the MIT license and NOTICE.md kept unchanged (the pykakasi/GPL, liblouis/LGPL and NLLB/CC-BY-NC conflicts remain to be clarified by the author); SRI for the jsDelivr scripts could not be added (no network for computing the hashes).
 
-## Funcții noi (v1.1.0)
+## New features (v1.1.0)
 
-- **Etichetă de transparență** (clic pe `v 1.1.0 · 2026-10-14` din subsol, kit comun): arată ce stocare locală folosește aplicația (progres, semne de carte, setări) și că funcțiile de bază nu fac cereri de rețea.
-- **Copie de siguranță .fff.json** a progresului de lectură, semnelor de carte și setărilor (export/import, opțional criptat cu parolă; cărțile în sine nu sunt incluse).
-- **Conversia în braille, citirea tactilă și audiobook-ul sunt neschimbate**: față de 1.0.0 s-au adăugat doar blocul kitului și versiunea. CSP-ul nu a fost modificat (rămâne fără `script-src`, din motivele din istoric). Nu s-a adăugat nimic care să atingă tabelele braille.
-- Textele noi sunt în ro, en, fr, it, es, pt, hu, de; traducerile sunt automate și neverificate nativ.
-- Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
+- **Transparency label** (click `v 1.1.0 · 2026-10-14` in the footer, shared kit): shows what local storage the app uses (progress, bookmarks, settings) and that the basic features make no network requests.
+- **`.fff.json` backup** of reading progress, bookmarks and settings (export/import, optionally encrypted with a password; the books themselves are not included).
+- **Braille conversion, tactile reading and the audiobook are unchanged**: compared with 1.0.0, only the kit block and the version were added. The CSP was not modified (it remains without `script-src`, for the reasons in the history). Nothing that touches the braille tables was added.
+- The new texts are in ro, en, fr, it, es, pt, hu, de; the translations are machine-generated and not checked by native speakers.
+- Tests: `tests/fff-r8.test.mjs` (network blocked, 1280 and 360 px, axe 0 violations in the new dialog). Limitation: the app has not been tested on real touch devices, as before.
 
-## Istoric / Changelog
+## History / Changelog
 
 ### 1.1.1 — 2026-10-18
-- Reparat: detectarea limbii nu mai votează catalana pentru orice punct median „·” (folosit în titluri, ex. Nota Zero); rămâne doar geminata „l·l”. Fișierele .md românești cu „·” sunt acum recunoscute ca `ro`.
+- Fixed: language detection no longer votes Catalan for any middle dot "·" (used in titles, e.g. Nota Zero); only the geminate "l·l" remains. Romanian .md files containing "·" are now recognized as `ro`.
 
 ### 1.1.0 — 2026-10-14
-- Nou: etichetă de transparență și copie .fff.json (kit comun). Conversia braille neschimbată.
+- New: transparency label and `.fff.json` backup (shared kit). Braille conversion unchanged.
 
 ### 1.0.0 — 2026-10-12
-- Versiunea și data ultimei actualizări sunt afișate în aplicație (subsol).
+- The version and the date of the last update are shown in the app (footer).
 
-### 11 octombrie 2026 (runda 7)
-- Reparat: exportul .BRF/.txt prinde acum erorile (mesaj „Exportul a eșuat” în loc de eșec tăcut) și dezactivează butoanele cât timp rulează, ca să nu pornească două descărcări deodată; nu s-a putut reproduce un eșec de descărcare în Chromium (descărcările funcționează), deci cauza raportată rămâne neconfirmată.
-- Îmbunătățit: avertismentul de pe primul ecran este scurt în română, cu varianta engleză (marcată `lang="en"`) într-un panou „English”; notă despre codificarea ASCII braille a exportului .BRF.
-- Neschimbat: fără `script-src` în CSP și fără SRI (liblouis/`new Function`, workere și WASM de pe jsDelivr; nu pot fi verificate fără rețea); licențele rămân decizia autorului.
+### 11 October 2026 (round 7)
+- Fixed: the .BRF/.txt export now catches errors ("Export failed" message instead of a silent failure) and disables the buttons while it runs, so that two downloads do not start at once; a download failure could not be reproduced in Chromium (downloads work), so the reported cause remains unconfirmed.
+- Improved: the warning on the first screen is short in Romanian, with the English version (marked `lang="en"`) in an "English" panel; a note about the ASCII braille encoding of the .BRF export.
+- Unchanged: no `script-src` in the CSP and no SRI (liblouis/`new Function`, workers and WASM from jsDelivr; they cannot be verified without a network); the licenses remain the author's decision.
 
-### 11 octombrie 2026 (runda 6)
-- Adăugat: buton „Tipărește” în pagina învățătorului, cu stil de tipărire care păstrează doar braille-ul și textul paragrafului; respectă `prefers-reduced-motion` și `prefers-contrast: more`.
-- Neschimbat: fără `script-src` în CSP (necesită `unsafe-eval` pentru liblouis, workere/WASM de pe jsDelivr pentru OCR și traducere, imposibil de verificat fără rețea).
+### 11 October 2026 (round 6)
+- Added: a "Print" button on the teacher page, with a print style that keeps only the braille and the paragraph text; it respects `prefers-reduced-motion` and `prefers-contrast: more`.
+- Unchanged: no `script-src` in the CSP (it would need `unsafe-eval` for liblouis, workers/WASM from jsDelivr for OCR and translation, impossible to verify without a network).
 
-### 11 octombrie 2026
-- Reparat: butoanele de export (.BRF și text Unicode braille) sunt acum vizibile direct pe ecranul principal (pasul 3), nu într-o secțiune restrânsă.
-- Reparat: câmpul de căutare a limbii avea fundal alb cu text deschis (contrast insuficient); ecranele Braille, Audio, Învață și Scrie au acum titlu de nivel 1 (0 violări axe-core la 1280 și 360 px, inclusiv după încărcarea unui text).
-- Neschimbat (decizia autorului): licențele componentelor pykakasi/NLLB/liblouis rămân de clarificat; `new Function` (încărcarea liblouis) este păstrat, necesar pentru braille grad 2.
-
+### 11 October 2026
+- Fixed: the export buttons (.BRF and Unicode braille text) are now visible directly on the main screen (step 3), not in a collapsed section.
+- Fixed: the language search field had a white background with light text (insufficient contrast); the Braille, Audio, Learn and Write screens now have a level-1 heading (0 axe-core violations at 1280 and 360 px, including after loading a text).
+- Unchanged (the author's decision): the licenses of the pykakasi/NLLB/liblouis components remain to be clarified; `new Function` (loading liblouis) is kept, needed for grade 2 braille.
