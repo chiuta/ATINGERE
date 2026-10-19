@@ -8,7 +8,7 @@ A felület nyelvei: **Română, English, Français, Italiano, Español, Portugu�
 
 **Élő verzió / demó:** https://chiuta.github.io/ATINGERE/
 
-![ATINGERE — képernyőkép](screenshot.png)
+![ATINGERE — képernyőkép](screenshot.hu.png)
 
 Bármely könyvet (EPUB, TXT, HTML, DOCX, PDF, BRF, képek) tapintható Braille-írássá alakít süketvak emberek számára, vagy hangoskönyvvé vak emberek számára. Egyetlen HTML-fájl, 137 nyelv és kód (1. fokú Braille-írás); az OCR, a hangparancsok és a fordítás funkciókhoz internet kell.
 

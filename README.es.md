@@ -8,7 +8,7 @@ Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Port
 
 **En línea / demo:** https://chiuta.github.io/ATINGERE/
 
-![ATINGERE — captura de pantalla](screenshot.png)
+![ATINGERE — captura de pantalla](screenshot.es.png)
 
 Convierte cualquier libro (EPUB, TXT, HTML, DOCX, PDF, BRF, imágenes) en braille táctil para personas sordociegas o en audiolibro para personas ciegas. Un solo archivo HTML, 137 idiomas y códigos (braille de grado 1); las funciones de OCR, comandos de voz y traducción necesitan internet.
 

@@ -8,7 +8,7 @@ Limbile interfeței: **Română, English, Français, Italiano, Español, Portugu
 
 **Live / demo:** https://chiuta.github.io/ATINGERE/
 
-![ATINGERE — captură de ecran / screenshot](screenshot.png)
+![ATINGERE — captură de ecran / screenshot](screenshot.ro.png)
 
 Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, 137 de limbi și coduri (braille grad 1); funcțiile OCR, comenzi vocale și traducere au nevoie de internet.
 

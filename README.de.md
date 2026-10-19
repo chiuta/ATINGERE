@@ -8,7 +8,7 @@ Oberflächensprachen: **Română, English, Français, Italiano, Español, Portug
 
 **Live / Demo:** https://chiuta.github.io/ATINGERE/
 
-![ATINGERE — Screenshot](screenshot.png)
+![ATINGERE — Screenshot](screenshot.de.png)
 
 Wandelt jedes Buch (EPUB, TXT, HTML, DOCX, PDF, BRF, Bilder) in taktile Braille-Schrift für taubblinde Menschen oder in ein Hörbuch für blinde Menschen um. Eine einzige HTML-Datei, 137 Sprachen und Codes (Braille Grad 1); die Funktionen OCR, Sprachbefehle und Übersetzung benötigen Internet.
 
