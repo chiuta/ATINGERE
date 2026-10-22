@@ -1,8 +1,11 @@
 /* fff-pwa v1 · generat de fff-kit/pwa/pwa.mjs · fără cereri externe, fără importScripts */
 'use strict';
-var SLUG = "atingere", VERSION = "1.2.6";
+var SLUG = "atingere", VERSION = "1.2.7";
 var PREFIX = 'fff-' + SLUG + '-', CACHE = PREFIX + VERSION;   // versiunea nu conține '-', deci sufixul de după ultimul '-' e versiunea
-var SHELL = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
+var SHELL = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png',
+  /* biblioteci vendorizate mici (offline după prima vizită); cele mari (core OCR 3,9 MB) intră în cache la prima folosire */
+  './vendor/tesseract.js@5.1.1/tesseract.min.js', './vendor/tesseract.js@5.1.1/worker.min.js',
+  './vendor/transformers@3.8.1/transformers.min.js', './vendor/transformers@3.8.1/ort-wasm-simd-threaded.jsep.mjs'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil((async function () {

@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.6 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.2.7 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -32,7 +32,7 @@ Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille 
 - **Traducere automată** în română (opțional, model descărcat o dată, ~700 MB).
 
 ## Ce are nevoie de internet
-OCR (motorul și datele limbii se descarcă o dată), comenzile vocale (serviciul browserului) și traducerea automată. Restul funcționează offline.
+OCR (datele limbii se descarcă o dată; motorul este inclus), comenzile vocale (serviciul browserului) și traducerea automată. Restul funcționează offline.
 
 ## Limite — citește înainte de utilizare serioasă
 (Avertismentul de mai jos este afișat și pe primul ecran al aplicației.)
@@ -48,8 +48,8 @@ Dacă un cuvânt apare cu braille greșit, folosește în aplicație **⋯ → R
 
 ## Confidențialitate
 Aplicația nu are server propriu, cont, statistici sau urmărire; cărțile rămân în browser, iar progresul și semnele de carte se salvează local. **Dar unele funcții opționale contactează terți:**
-- **OCR** (imagini/PDF scanat): la prima folosire încarcă `tesseract.js` de pe `cdn.jsdelivr.net` (fără verificare de integritate SRI) și datele limbii de pe `raw.githubusercontent.com`; aceste servere văd adresa IP, nu textul cărții.
-- **Traducere automată** (opțională): încarcă `transformers.js` de pe `cdn.jsdelivr.net` și modelul (~700 MB) de pe `huggingface.co`; traducerea rulează local.
+- **OCR** (imagini/PDF scanat): motorul (`tesseract.js`) face parte din depozit (`vendor/`, încărcat cu SRI); la prima folosire a unei limbi, datele ei se descarcă de pe `raw.githubusercontent.com` (commit fixat, SHA-256 verificat înainte de folosire); acel server vede adresa IP, nu textul cărții.
+- **Traducere automată** (opțională): biblioteca (`transformers.js`) este în `vendor/`; `.wasm`-ul ONNX Runtime (~22 MB) se descarcă de la o cale exactă de pe `cdn.jsdelivr.net` (versiune fixată, SHA-256 verificat, altfel refuzat), iar modelul (~700 MB) de pe `huggingface.co`; traducerea rulează local.
 - **Comenzi vocale**: folosesc recunoașterea vocală a browserului (`SpeechRecognition`); în Chrome, de exemplu, audio este trimis serviciului de voce al furnizorului browserului.
 - Linkurile din catalogul de cărți duc la site-uri externe, doar la click.
 Fără aceste funcții, aplicația nu face cereri de rețea.
@@ -70,6 +70,10 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
 
 ## Istoric / Changelog
+
+### 1.2.7 — 2026-10-22
+- Securitate: nu se mai încarcă niciun cod de pe un CDN la rulare. `tesseract.js` 5.1.1 (cu `tesseract.js-core` 5.1.0, build SIMD) și `transformers.js` 3.8.1 sunt acum în `vendor/` (încărcate din aceeași origine cu SRI și precache-uite de service worker). Datele limbii pentru OCR vin de la un commit fixat din `tessdata_fast`, iar `.wasm`-ul ONNX Runtime de la o cale npm fixată; ambele sunt verificate SHA-256 înainte de folosire (altfel refuzate). CSP: `cdn.jsdelivr.net` scos din `script-src`, `connect-src` limitat la căi exacte. Aproximativ 5 MB adăugați în depozit (vezi `NOTICE.md`).
+- OCR-ul cere WebAssembly SIMD; de pe `file://` bibliotecile de OCR și de traducere nu pot fi încărcate (folosește https sau un server local).
 
 ### 1.2.6 — 2026-10-22
 - fff-kit 1.1.4: ținte tactile și text minim; ținte tactile/text corectate

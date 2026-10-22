@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.2.6 · **Última atualização:** 2026-10-22
+**Versão:** 1.2.7 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -32,7 +32,7 @@ Converte qualquer livro (EPUB, TXT, HTML, DOCX, PDF, BRF, imagens) em braille t�
 - **Tradução automática** para romeno (opcional, modelo descarregado uma vez, ~700 MB).
 
 ## O que precisa de internet
-O OCR (o motor e os dados do idioma são descarregados uma vez), os comandos de voz (o serviço do navegador) e a tradução automática. Tudo o resto funciona offline.
+O OCR (os dados do idioma são descarregados uma vez; o motor está incluído), os comandos de voz (o serviço do navegador) e a tradução automática. Tudo o resto funciona offline.
 
 ## Limites — leia antes de uma utilização séria
 (O aviso abaixo é também apresentado no primeiro ecrã da aplicação.)
@@ -48,8 +48,8 @@ Se uma palavra surgir com braille errado, use na aplicação **⋯ → Comunicar
 
 ## Privacidade
 A aplicação não tem servidor próprio, conta, estatísticas nem rastreamento; os livros ficam no navegador, e o progresso e os marcadores são guardados localmente. **Mas algumas funcionalidades opcionais contactam terceiros:**
-- **OCR** (imagens/PDF digitalizado): na primeira utilização carrega o `tesseract.js` a partir de `cdn.jsdelivr.net` (sem verificação de integridade SRI) e os dados do idioma a partir de `raw.githubusercontent.com`; esses servidores veem o endereço IP, não o texto do livro.
-- **Tradução automática** (opcional): carrega o `transformers.js` a partir de `cdn.jsdelivr.net` e o modelo (~700 MB) a partir de `huggingface.co`; a tradução corre localmente.
+- **OCR** (imagens/PDF digitalizado): o motor (`tesseract.js`) faz parte do repositório (`vendor/`, carregado com SRI); na primeira utilização de um idioma, os seus dados são descarregados de `raw.githubusercontent.com` (commit fixo, SHA-256 verificado antes de usar); esse servidor vê o endereço IP, não o texto do livro.
+- **Tradução automática** (opcional): a biblioteca (`transformers.js`) está em `vendor/`; o `.wasm` do ONNX Runtime (~22 MB) é descarregado de um caminho exato de `cdn.jsdelivr.net` (versão fixa, SHA-256 verificado, caso contrário é recusado) e o modelo (~700 MB) de `huggingface.co`; a tradução corre localmente.
 - **Comandos de voz**: usam o reconhecimento de voz do navegador (`SpeechRecognition`); no Chrome, por exemplo, o áudio é enviado ao serviço de voz do fornecedor do navegador.
 - As ligações do catálogo de livros levam a sítios externos, apenas ao clicar.
 Sem estas funcionalidades, a aplicação não faz pedidos de rede.
@@ -70,6 +70,10 @@ Auditoria: 2026-10-10; ronda 2 (2026-10-11): aviso de validação no primeiro ec
 - Testes: `tests/fff-r8.test.mjs` (rede bloqueada, 1280 e 360 px, axe 0 violações na nova caixa de diálogo). Limitação: a aplicação não foi testada em dispositivos táteis reais, como antes.
 
 ## Histórico / Changelog
+
+### 1.2.7 — 2026-10-22
+- Segurança: já não se carrega nenhum código de um CDN em tempo de execução. O `tesseract.js` 5.1.1 (com `tesseract.js-core` 5.1.0, build SIMD) e o `transformers.js` 3.8.1 estão agora em `vendor/` (carregados da mesma origem com SRI e pré-colocados em cache pelo service worker). Os dados de idioma do OCR vêm de um commit fixo do `tessdata_fast` e o `.wasm` do ONNX Runtime de um caminho npm fixo; ambos são verificados com SHA-256 antes de usar (caso contrário são recusados). CSP: `cdn.jsdelivr.net` removido de `script-src`, `connect-src` limitado a caminhos exatos. Cerca de 5 MB adicionados ao repositório (ver `NOTICE.md`).
+- O OCR exige WebAssembly SIMD; a partir de `file://` as bibliotecas de OCR e de tradução não podem ser carregadas (use https ou um servidor local).
 
 ### 1.2.6 — 2026-10-22
 - fff-kit 1.1.4: alvos de toque e tamanho mínimo do texto; alvos de toque/texto corrigidos

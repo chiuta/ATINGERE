@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.2.6 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.2.7 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -32,7 +32,7 @@ Convertit n'importe quel livre (EPUB, TXT, HTML, DOCX, PDF, BRF, images) en brai
 - **Traduction automatique** vers le roumain (facultative, modèle téléchargé une fois, ~700 Mo).
 
 ## Ce qui nécessite Internet
-L'OCR (le moteur et les données de langue sont téléchargés une fois), les commandes vocales (le service du navigateur) et la traduction automatique. Tout le reste fonctionne hors ligne.
+L'OCR (les données de langue sont téléchargées une fois ; le moteur est inclus), les commandes vocales (le service du navigateur) et la traduction automatique. Tout le reste fonctionne hors ligne.
 
 ## Limites — à lire avant un usage sérieux
 (L'avertissement ci-dessous est aussi affiché sur le premier écran de l'application.)
@@ -48,8 +48,8 @@ Si un mot apparaît avec un braille erroné, utilisez dans l'application **⋯ �
 
 ## Confidentialité
 L'application n'a ni serveur propre, ni compte, ni statistiques, ni pistage ; les livres restent dans le navigateur, et la progression et les signets sont enregistrés localement. **Mais certaines fonctions facultatives contactent des tiers :**
-- **OCR** (images/PDF numérisé) : à la première utilisation, il charge `tesseract.js` depuis `cdn.jsdelivr.net` (sans vérification d'intégrité SRI) et les données de langue depuis `raw.githubusercontent.com` ; ces serveurs voient l'adresse IP, pas le texte du livre.
-- **Traduction automatique** (facultative) : charge `transformers.js` depuis `cdn.jsdelivr.net` et le modèle (~700 Mo) depuis `huggingface.co` ; la traduction s'exécute localement.
+- **OCR** (images/PDF numérisé) : le moteur (`tesseract.js`) fait partie du dépôt (`vendor/`, chargé avec SRI) ; à la première utilisation d'une langue, ses données sont téléchargées depuis `raw.githubusercontent.com` (commit figé, SHA-256 vérifié avant usage) ; ce serveur voit l'adresse IP, pas le texte du livre.
+- **Traduction automatique** (facultative) : la bibliothèque (`transformers.js`) est dans `vendor/` ; le `.wasm` d'ONNX Runtime (~22 Mo) est téléchargé depuis un chemin exact de `cdn.jsdelivr.net` (version figée, SHA-256 vérifié, sinon refusé) et le modèle (~700 Mo) depuis `huggingface.co` ; la traduction s'exécute localement.
 - **Commandes vocales** : elles utilisent la reconnaissance vocale du navigateur (`SpeechRecognition`) ; dans Chrome, par exemple, l'audio est envoyé au service vocal du fournisseur du navigateur.
 - Les liens du catalogue de livres mènent à des sites externes, uniquement au clic.
 Sans ces fonctions, l'application ne fait aucune requête réseau.
@@ -70,6 +70,10 @@ Audit : 2026-10-10 ; tour 2 (2026-10-11) : avertissement de validation sur le pr
 - Tests : `tests/fff-r8.test.mjs` (réseau bloqué, 1280 et 360 px, axe 0 violation dans la nouvelle boîte de dialogue). Limite : l'application n'a pas été testée sur de vrais appareils tactiles, comme auparavant.
 
 ## Historique / Changelog
+
+### 1.2.7 — 2026-10-22
+- Sécurité : plus aucun code n'est chargé depuis un CDN à l'exécution. `tesseract.js` 5.1.1 (avec `tesseract.js-core` 5.1.0, build SIMD) et `transformers.js` 3.8.1 sont désormais dans `vendor/` (chargés depuis la même origine avec SRI et mis en précache par le service worker). Les données de langue de l'OCR viennent d'un commit figé de `tessdata_fast` et le `.wasm` d'ONNX Runtime d'un chemin npm figé ; les deux sont vérifiés par SHA-256 avant usage (sinon refusés). CSP : `cdn.jsdelivr.net` retiré de `script-src`, `connect-src` limité à des chemins exacts. Environ 5 Mo ajoutés au dépôt (voir `NOTICE.md`).
+- L'OCR exige WebAssembly SIMD ; depuis `file://`, les bibliothèques d'OCR et de traduction ne peuvent pas être chargées (utilisez https ou un serveur local).
 
 ### 1.2.6 — 2026-10-22
 - fff-kit 1.1.4 : cibles tactiles et taille de texte minimale ; cibles tactiles/texte corrigés

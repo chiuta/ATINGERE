@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.2.6 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 1.2.7 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -32,7 +32,7 @@ Bármely könyvet (EPUB, TXT, HTML, DOCX, PDF, BRF, képek) tapintható Braille-
 - **Automatikus fordítás** románra (opcionális, a modell egyszer töltődik le, ~700 MB).
 
 ## Mihez kell internet
-Az OCR-hez (a motor és a nyelvi adatok egyszer töltődnek le), a hangparancsokhoz (a böngésző szolgáltatása) és az automatikus fordításhoz. Minden más offline működik.
+Az OCR-hez (a nyelvi adatok egyszer töltődnek le; a motor benne van), a hangparancsokhoz (a böngésző szolgáltatása) és az automatikus fordításhoz. Minden más offline működik.
 
 ## Korlátok — komoly használat előtt olvasd el
 (Az alábbi figyelmeztetés az alkalmazás első képernyőjén is megjelenik.)
@@ -48,8 +48,8 @@ Ha egy szó hibás Braille-írással jelenik meg, használd az alkalmazásban a 
 
 ## Adatvédelem
 Az alkalmazásnak nincs saját szervere, fiókja, statisztikája és követése; a könyvek a böngészőben maradnak, az előrehaladás és a könyvjelzők helyben mentődnek. **Egyes opcionális funkciók azonban harmadik felekkel lépnek kapcsolatba:**
-- **OCR** (képek/beolvasott PDF): az első használatkor a `tesseract.js`-t a `cdn.jsdelivr.net`-ről (SRI-integritásellenőrzés nélkül), a nyelvi adatokat pedig a `raw.githubusercontent.com`-ról tölti be; ezek a szerverek az IP-címet látják, a könyv szövegét nem.
-- **Automatikus fordítás** (opcionális): a `transformers.js`-t a `cdn.jsdelivr.net`-ről, a modellt (~700 MB) a `huggingface.co`-ról tölti be; a fordítás helyben fut.
+- **OCR** (képek/beolvasott PDF): a motor (`tesseract.js`) a tároló része (`vendor/`, SRI-vel töltődik be); egy nyelv első használatakor az adatai a `raw.githubusercontent.com`-ról töltődnek le (rögzített commit, használat előtt SHA-256-tal ellenőrizve); ez a szerver az IP-címet látja, a könyv szövegét nem.
+- **Automatikus fordítás** (opcionális): a könyvtár (`transformers.js`) a `vendor/` mappában van; az ONNX Runtime `.wasm` (~22 MB) a `cdn.jsdelivr.net` egy pontos útvonaláról töltődik le (rögzített verzió, SHA-256-tal ellenőrizve, különben elutasítva), a modell (~700 MB) a `huggingface.co`-ról; a fordítás helyben fut.
 - **Hangparancsok**: a böngésző beszédfelismerését használják (`SpeechRecognition`); például a Chrome-ban a hang a böngészőgyártó beszédszolgáltatásához kerül.
 - A könyvkatalógus hivatkozásai csak kattintásra vezetnek külső oldalakra.
 E funkciók nélkül az alkalmazás nem indít hálózati kéréseket.
@@ -70,6 +70,10 @@ Audit: 2026-10-10; 2. kör (2026-10-11): érvényesítési figyelmeztetés az el
 - Tesztek: `tests/fff-r8.test.mjs` (letiltott hálózat, 1280 és 360 px, axe 0 szabálysértés az új párbeszédablakban). Korlát: az alkalmazást, mint korábban, nem tesztelték valódi érintőeszközökön.
 
 ## Előzmények / Changelog
+
+### 1.2.7 — 2026-10-22
+- Biztonság: futásidőben már semmilyen kód nem töltődik be CDN-ről. A `tesseract.js` 5.1.1 (a `tesseract.js-core` 5.1.0-val, SIMD build) és a `transformers.js` 3.8.1 mostantól a `vendor/` mappában van (ugyanabból az origóból, SRI-vel töltődik, és a service worker előre gyorsítótárazza). Az OCR nyelvi adatai egy rögzített `tessdata_fast` commitból, az ONNX Runtime `.wasm` pedig egy rögzített npm-útvonalról jön; mindkettőt használat előtt SHA-256-tal ellenőrzi (különben elutasítja). CSP: a `cdn.jsdelivr.net` kikerült a `script-src`-ből, a `connect-src` pontos útvonalakra korlátozódik. Kb. 5 MB került a tárolóba (lásd `NOTICE.md`).
+- Az OCR-hez WebAssembly SIMD kell; `file://` címről az OCR- és fordítókönyvtárak nem tölthetők be (használj https-t vagy helyi szervert).
 
 ### 1.2.6 — 2026-10-22
 - fff-kit 1.1.4: érintési célpontok és minimális szövegméret; érintési célpontok/szöveg javítva

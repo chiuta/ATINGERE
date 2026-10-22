@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.6 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.2.7 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -32,7 +32,7 @@ Wandelt jedes Buch (EPUB, TXT, HTML, DOCX, PDF, BRF, Bilder) in taktile Braille-
 - **Automatische Übersetzung** ins Rumänische (optional, Modell wird einmal heruntergeladen, ~700 MB).
 
 ## Was Internet braucht
-OCR (die Engine und die Sprachdaten werden einmal heruntergeladen), Sprachbefehle (der Dienst des Browsers) und die automatische Übersetzung. Alles andere funktioniert offline.
+OCR (die Sprachdaten werden einmal heruntergeladen; die Engine ist enthalten), Sprachbefehle (der Dienst des Browsers) und die automatische Übersetzung. Alles andere funktioniert offline.
 
 ## Grenzen — vor ernsthafter Nutzung lesen
 (Der folgende Hinweis wird auch auf dem ersten Bildschirm der App angezeigt.)
@@ -48,8 +48,8 @@ Wenn ein Wort mit falscher Brailleschrift erscheint, nutze in der App **⋯ → 
 
 ## Datenschutz
 Die App hat keinen eigenen Server, kein Konto, keine Statistik und kein Tracking; die Bücher bleiben im Browser, Fortschritt und Lesezeichen werden lokal gespeichert. **Einige optionale Funktionen kontaktieren jedoch Dritte:**
-- **OCR** (Bilder/gescanntes PDF): Bei der ersten Nutzung lädt sie `tesseract.js` von `cdn.jsdelivr.net` (ohne SRI-Integritätsprüfung) und die Sprachdaten von `raw.githubusercontent.com`; diese Server sehen die IP-Adresse, nicht den Text des Buches.
-- **Automatische Übersetzung** (optional): lädt `transformers.js` von `cdn.jsdelivr.net` und das Modell (~700 MB) von `huggingface.co`; die Übersetzung läuft lokal.
+- **OCR** (Bilder/gescanntes PDF): Die Engine (`tesseract.js`) ist Teil des Repositorys (`vendor/`, mit SRI geladen); bei der ersten Nutzung einer Sprache werden deren Daten von `raw.githubusercontent.com` geladen (fester Commit, SHA-256 vor der Verwendung geprüft); dieser Server sieht die IP-Adresse, nicht den Text des Buches.
+- **Automatische Übersetzung** (optional): Die Bibliothek (`transformers.js`) liegt in `vendor/`; das `.wasm` von ONNX Runtime (~22 MB) wird von einem exakten Pfad auf `cdn.jsdelivr.net` geladen (feste Version, SHA-256 geprüft, sonst abgelehnt) und das Modell (~700 MB) von `huggingface.co`; die Übersetzung läuft lokal.
 - **Sprachbefehle**: Sie nutzen die Spracherkennung des Browsers (`SpeechRecognition`); in Chrome zum Beispiel wird das Audio an den Sprachdienst des Browseranbieters gesendet.
 - Die Links im Buchkatalog führen nur per Klick zu externen Websites.
 Ohne diese Funktionen stellt die App keine Netzwerkanfragen.
@@ -70,6 +70,10 @@ Audit: 2026-10-10; Runde 2 (2026-10-11): Validierungshinweis auf dem ersten Bild
 - Tests: `tests/fff-r8.test.mjs` (Netzwerk blockiert, 1280 und 360 px, axe 0 Verstöße im neuen Dialog). Einschränkung: Die App wurde wie zuvor nicht auf echten Touchgeräten getestet.
 
 ## Verlauf / Changelog
+
+### 1.2.7 — 2026-10-22
+- Sicherheit: Zur Laufzeit wird kein Code mehr von einem CDN geladen. `tesseract.js` 5.1.1 (mit `tesseract.js-core` 5.1.0, SIMD-Build) und `transformers.js` 3.8.1 liegen jetzt in `vendor/` (von derselben Origin mit SRI geladen und vom Service Worker vorab gecacht). Die OCR-Sprachdaten stammen von einem festen `tessdata_fast`-Commit und das `.wasm` von ONNX Runtime von einem festen npm-Pfad; beide werden vor der Nutzung per SHA-256 geprüft (sonst abgelehnt). CSP: `cdn.jsdelivr.net` aus `script-src` entfernt, `connect-src` auf exakte Pfade begrenzt. Rund 5 MB zum Repository hinzugefügt (siehe `NOTICE.md`).
+- OCR benötigt WebAssembly SIMD; von `file://` lassen sich die OCR- und Übersetzungsbibliotheken nicht laden (https oder lokalen Server verwenden).
 
 ### 1.2.6 — 2026-10-22
 - fff-kit 1.1.4: Touch-Ziele und Mindestschriftgröße; Touch-Ziele/Text korrigiert
