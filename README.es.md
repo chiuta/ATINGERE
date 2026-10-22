@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.0 · **Última actualización:** 2026-10-19
+**Versión:** 1.2.1 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,9 @@ Auditoría: 2026-10-10; ronda 2 (2026-10-11): aviso de validación en la primera
 - Pruebas: `tests/fff-r8.test.mjs` (red bloqueada, 1280 y 360 px, axe 0 violaciones en el nuevo diálogo). Limitación: la aplicación no se ha probado en dispositivos táctiles reales, como antes.
 
 ## Historial / Changelog
+
+### 1.2.1 — 2026-10-22
+- El catálogo de fuentes de libros (nombres, notas de precio y descripciones) y el título de la página ahora siguen el idioma de la interfaz en lugar de quedarse en rumano.
 
 ### 1.1.1 — 2026-10-18
 - Corregido: la detección de idioma ya no vota catalán por cualquier punto medio «·» (usado en títulos, p. ej. Nota Zero); solo queda la geminada «l·l». Los archivos .md rumanos con «·» se reconocen ahora como `ro`.

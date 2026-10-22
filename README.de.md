@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.0 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 1.2.1 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,9 @@ Audit: 2026-10-10; Runde 2 (2026-10-11): Validierungshinweis auf dem ersten Bild
 - Tests: `tests/fff-r8.test.mjs` (Netzwerk blockiert, 1280 und 360 px, axe 0 Verstöße im neuen Dialog). Einschränkung: Die App wurde wie zuvor nicht auf echten Touchgeräten getestet.
 
 ## Verlauf / Changelog
+
+### 1.2.1 — 2026-10-22
+- Der Katalog der Buchquellen (Namen, Preishinweise und Beschreibungen) und der Seitentitel folgen jetzt der Oberflächensprache, statt rumänisch zu bleiben.
 
 ### 1.1.1 — 2026-10-18
 - Behoben: Die Spracherkennung stimmt nicht mehr bei jedem Mittelpunkt „·“ (in Titeln verwendet, z. B. Nota Zero) für Katalanisch; es bleibt nur die Geminate „l·l“. Rumänische .md-Dateien mit „·“ werden jetzt als `ro` erkannt.

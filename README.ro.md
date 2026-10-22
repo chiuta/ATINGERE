@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.0 · **Ultima actualizare:** 2026-10-19
+**Versiune:** 1.2.1 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille 
 
 **Orice carte, în braille tactil sau în audiobook — dintr-un singur fișier HTML, fără cont, fără server.**
 
-*One-file, offline web app that turns a book into touch-screen braille (vibration, for deaf-blind readers) or a TTS audiobook (for blind readers). 130+ languages, Romanian first.*
+*Aplicație web dintr-un singur fișier, offline, care transformă o carte în braille pe ecranul tactil (vibrații, pentru cititorii surdo-orbi) sau în audiobook cu sinteză vocală (pentru cititorii nevăzători). Peste 130 de limbi, româna pe primul loc.*
 
 **Aplicația live:** momentan nu există o adresă publică confirmată (GitHub Pages nu este activat sau adresa nu a fost verificată la audit). Descarcă `index.html` și deschide-l în browser; merge offline pentru funcțiile de bază.
 
@@ -68,6 +68,9 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
 
 ## Istoric / Changelog
+
+### 1.2.1 — 2026-10-22
+- Catalogul de surse de cărți (nume, note de preț și descrieri) și titlul paginii urmează acum limba interfeței, nu mai rămân în română.
 
 ### 1.1.1 — 2026-10-18
 - Reparat: detectarea limbii nu mai votează catalana pentru orice punct median „·” (folosit în titluri, ex. Nota Zero); rămâne doar geminata „l·l”. Fișierele .md românești cu „·” sunt acum recunoscute ca `ro`.
