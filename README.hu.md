@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.2.5 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 1.2.6 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -70,6 +70,9 @@ Audit: 2026-10-10; 2. kör (2026-10-11): érvényesítési figyelmeztetés az el
 - Tesztek: `tests/fff-r8.test.mjs` (letiltott hálózat, 1280 és 360 px, axe 0 szabálysértés az új párbeszédablakban). Korlát: az alkalmazást, mint korábban, nem tesztelték valódi érintőeszközökön.
 
 ## Előzmények / Changelog
+
+### 1.2.6 — 2026-10-22
+- fff-kit 1.1.4: érintési célpontok és minimális szövegméret; érintési célpontok/szöveg javítva
 
 ### 1.2.5 — 2026-10-22
 - Biztonság: teljes Content-Security-Policy (`default-src 'none'`; szkriptek csak hash-sel és a `cdn.jsdelivr.net`-ről; kapcsolatok csak a `cdn.jsdelivr.net`, `raw.githubusercontent.com` és `huggingface.co`/`hf.co` felé). Megmarad az `'unsafe-eval'` (a liblouishoz, 2. fokozat) és a `blob:` (a beágyazott pdf.js-hez). Ellenőrizve: 2. fokozat, PDF, OCR és a nem listázott gazdák blokkolása.

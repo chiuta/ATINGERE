@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.5 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.2.6 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -70,6 +70,9 @@ Audit: 2026-10-10; Runde 2 (2026-10-11): Validierungshinweis auf dem ersten Bild
 - Tests: `tests/fff-r8.test.mjs` (Netzwerk blockiert, 1280 und 360 px, axe 0 Verstöße im neuen Dialog). Einschränkung: Die App wurde wie zuvor nicht auf echten Touchgeräten getestet.
 
 ## Verlauf / Changelog
+
+### 1.2.6 — 2026-10-22
+- fff-kit 1.1.4: Touch-Ziele und Mindestschriftgröße; Touch-Ziele/Text korrigiert
 
 ### 1.2.5 — 2026-10-22
 - Sicherheit: vollständige Content-Security-Policy (`default-src 'none'`; Skripte nur per Hash und von `cdn.jsdelivr.net`; Verbindungen nur zu `cdn.jsdelivr.net`, `raw.githubusercontent.com` und `huggingface.co`/`hf.co`). Bestehen bleiben `'unsafe-eval'` (für liblouis, Stufe 2) und `blob:` (für das eingebettete pdf.js). Geprüft: Stufe 2, PDF, OCR und Blockieren nicht gelisteter Hosts.

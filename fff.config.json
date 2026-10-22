@@ -1,0 +1,5 @@
+{
+  "cspExceptions": [
+    {"rule": "script-unsafe-eval", "reason": "liblouis (tabelele braille de grad 2) și motorul său compilat construiesc funcții cu new Function; fără 'unsafe-eval' conversia de grad 2 nu rulează în browser"}
+  ]
+}
