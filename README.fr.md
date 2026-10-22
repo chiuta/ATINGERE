@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.2.3 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.2.4 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,9 @@ Audit : 2026-10-10 ; tour 2 (2026-10-11) : avertissement de validation sur le pr
 - Tests : `tests/fff-r8.test.mjs` (réseau bloqué, 1280 et 360 px, axe 0 violation dans la nouvelle boîte de dialogue). Limite : l'application n'a pas été testée sur de vrais appareils tactiles, comme auparavant.
 
 ## Historique / Changelog
+
+### 1.2.4 — 2026-10-22
+- fff-kit 1.1.2 : PBKDF2 600 000 itérations, protection anti-clickjacking
 
 ### 1.2.3 — 2026-10-22
 - Accessibilité : un seul H1 par écran (les autres titres sont des H2 d'apparence identique) ; le champ de collage du texte a désormais un nom accessible.

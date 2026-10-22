@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.2.3 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 1.2.4 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -61,6 +61,7 @@ Audit: 2026-10-10; round 2 (2026-10-11): avviso di validazione nella prima scher
 
 ## Novità (v1.1.0)
 
+- 1.2.4 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600.000 iterazioni, protezione anti-clickjacking
 - **Etichetta di trasparenza** (clic su `v 1.1.0 · 2026-10-14` nel piè di pagina, kit comune): mostra quale archiviazione locale usa l'applicazione (progressi, segnalibri, impostazioni) e che le funzioni di base non effettuano richieste di rete.
 - **Copia di sicurezza `.fff.json`** dei progressi di lettura, dei segnalibri e delle impostazioni (esportazione/importazione, facoltativamente cifrata con password; i libri stessi non sono inclusi).
 - **La conversione in braille, la lettura tattile e l'audiolibro sono invariati**: rispetto alla 1.0.0 sono stati aggiunti solo il blocco del kit e la versione. La CSP non è stata modificata (resta senza `script-src`, per i motivi indicati nella cronologia). Non è stato aggiunto nulla che tocchi le tabelle braille.
