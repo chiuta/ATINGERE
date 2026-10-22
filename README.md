@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.2.4 · **Last updated:** 2026-10-22
+**Version:** 1.2.5 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,6 +57,8 @@ Without these features, the app makes no network requests.
 ## License
 Own code: MIT (see [LICENSE](LICENSE)). The third-party components (liblouis, pdf.js and others) have their own licenses; see [NOTICE.md](NOTICE.md). Some entries there are marked "to be verified" (the kanji table derived from pykakasi, possibly GPL-3.0; the Chinese/Cantonese tables with undocumented source; the NLLB-200 model, CC-BY-NC, downloaded on request) and must be clarified by the author before the MIT license is considered final.
 
+**Licence status (being resolved).** The kanji → hiragana table (Japanese) is derived from pykakasi (GPL-3.0) and the source of the pinyin (Chinese) and jyutping (Cantonese) tables is not documented; whether they are compatible with the MIT licence is not yet settled and **the licence has not been changed**. Until it is resolved, those tables can be disabled in Settings (the rest of the app, including kana and hangul, is unaffected). Options for the author: (1) license the whole project under GPL-3.0; (2) replace the tables with permissive or public-domain data (e.g. CC0 / Unicode Unihan-derived data with a documented source); (3) remove the affected languages.
+
 Audit: 2026-10-10; round 2 (2026-10-11): validation warning on the first screen; the MIT license and NOTICE.md kept unchanged (the pykakasi/GPL, liblouis/LGPL and NLLB/CC-BY-NC conflicts remain to be clarified by the author); SRI for the jsDelivr scripts could not be added (no network for computing the hashes).
 
 ## New features (v1.1.0)
@@ -68,6 +70,11 @@ Audit: 2026-10-10; round 2 (2026-10-11): validation warning on the first screen;
 - Tests: `tests/fff-r8.test.mjs` (network blocked, 1280 and 360 px, axe 0 violations in the new dialog). Limitation: the app has not been tested on real touch devices, as before.
 
 ## History / Changelog
+
+### 1.2.5 — 2026-10-22
+- Security: complete Content-Security-Policy (`default-src 'none'`; scripts only from hashes and `cdn.jsdelivr.net`; connections only to `cdn.jsdelivr.net`, `raw.githubusercontent.com` and `huggingface.co`/`hf.co`). `'unsafe-eval'` remains, needed by liblouis (grade 2); `blob:` remains, needed by the embedded pdf.js. Verified: grade 2, PDF, OCR and blocking of unlisted hosts.
+- Transparency: the declared external hosts now match the real ones (`raw.githubusercontent.com` for the OCR language data and `huggingface.co` for the translation model had been missing).
+- Licences: new Settings option that disables the Chinese, Cantonese and Japanese (kanji) reading tables, and a "Licences and legal status" note in the app (translated into 8 languages). Status: **being resolved** by the author, see below.
 
 ### 1.2.4 — 2026-10-22
 - fff-kit 1.1.2: PBKDF2 600,000 iterations, anti-clickjacking protection

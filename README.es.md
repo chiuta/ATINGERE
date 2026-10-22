@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.4 · **Última actualización:** 2026-10-22
+**Versión:** 1.2.5 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,6 +57,8 @@ Sin estas funciones, la aplicación no realiza peticiones de red.
 ## Licencia
 Código propio: MIT (consulta [LICENSE](LICENSE)). Los componentes de terceros (liblouis, pdf.js y otros) tienen licencias propias; consulta [NOTICE.md](NOTICE.md). Algunas entradas allí están marcadas «por verificar» (la tabla de kanji derivada de pykakasi, posiblemente GPL-3.0; las tablas de chino/cantonés con fuente no documentada; el modelo NLLB-200, CC-BY-NC, descargado bajo demanda) y el autor debe aclararlas antes de que la licencia MIT se considere definitiva.
 
+**Estado de las licencias (en proceso de aclaración).** La tabla kanji → hiragana (japonés) deriva de pykakasi (GPL-3.0) y la fuente de las tablas pinyin (chino) y jyutping (cantonés) no está documentada; su compatibilidad con la licencia MIT aún no está establecida y **la licencia no se ha modificado**. Mientras tanto, esas tablas pueden desactivarse en Ajustes (el resto de la aplicación, incluidos kana y hangul, no se ve afectado). Opciones para el autor: (1) licenciar todo el proyecto bajo GPL-3.0; (2) sustituir las tablas por datos permisivos o de dominio público (p. ej. CC0 / derivados de Unicode Unihan, con fuente documentada); (3) retirar los idiomas afectados.
+
 Auditoría: 2026-10-10; ronda 2 (2026-10-11): aviso de validación en la primera pantalla; la licencia MIT y NOTICE.md se mantienen sin cambios (los conflictos pykakasi/GPL, liblouis/LGPL y NLLB/CC-BY-NC siguen pendientes de aclarar por el autor); no se pudo añadir SRI a los scripts de jsDelivr (sin red para calcular los hashes).
 
 ## Novedades (v1.1.0)
@@ -68,6 +70,11 @@ Auditoría: 2026-10-10; ronda 2 (2026-10-11): aviso de validación en la primera
 - Pruebas: `tests/fff-r8.test.mjs` (red bloqueada, 1280 y 360 px, axe 0 violaciones en el nuevo diálogo). Limitación: la aplicación no se ha probado en dispositivos táctiles reales, como antes.
 
 ## Historial / Changelog
+
+### 1.2.5 — 2026-10-22
+- Seguridad: Content-Security-Policy completa (`default-src 'none'`; scripts solo con hashes y desde `cdn.jsdelivr.net`; conexiones solo a `cdn.jsdelivr.net`, `raw.githubusercontent.com` y `huggingface.co`/`hf.co`). Siguen `'unsafe-eval'`, necesario para liblouis (grado 2), y `blob:`, necesario para el pdf.js incorporado. Verificado: grado 2, PDF, OCR y bloqueo de hosts no listados.
+- Transparencia: los hosts externos declarados ahora coinciden con los reales (faltaban `raw.githubusercontent.com` para los datos de idioma del OCR y `huggingface.co` para el modelo de traducción).
+- Licencias: nueva opción en Ajustes que desactiva las tablas de lectura de chino, cantonés y japonés (kanji), y una nota «Licencias y situación jurídica» en la aplicación (traducida a 8 idiomas). Estado: **en proceso de aclaración** por el autor, véase más abajo.
 
 ### 1.2.4 — 2026-10-22
 - fff-kit 1.1.2: PBKDF2 600 000 iteraciones, protección anti-clickjacking

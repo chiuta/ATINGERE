@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.2.5 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,6 +57,8 @@ Fără aceste funcții, aplicația nu face cereri de rețea.
 ## Licență
 Codul propriu: MIT (vezi [LICENSE](LICENSE)). Componentele terțe (liblouis, pdf.js și altele) au licențe proprii; vezi [NOTICE.md](NOTICE.md). Unele intrări de acolo sunt marcate „de verificat" (tabelul kanji derivat din pykakasi, posibil GPL-3.0; tabelele chineză/cantoneză cu sursă nedocumentată; modelul NLLB-200, CC-BY-NC, descărcat la cerere) și trebuie clarificate de autor înainte ca licența MIT să fie considerată definitivă.
 
+**Stare licențe (în curs de rezolvare).** Tabelul kanji → hiragana (japoneză) este derivat din pykakasi (GPL-3.0), iar sursa tabelelor pinyin (chineză) și jyutping (cantoneză) nu este documentată; compatibilitatea cu licența MIT nu este încă stabilită, iar **licența nu a fost schimbată**. Până la rezolvare, aceste tabele pot fi dezactivate din Setări (restul aplicației, inclusiv kana și hangul, nu este afectat). Opțiuni pentru autor: (1) licențierea întregului proiect sub GPL-3.0; (2) înlocuirea tabelelor cu date permisive sau din domeniul public (ex. CC0 / derivate din Unicode Unihan, cu sursă documentată); (3) scoaterea limbilor afectate.
+
 Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecran; licența MIT și NOTICE.md păstrate neschimbate (conflictele pykakasi/GPL, liblouis/LGPL și NLLB/CC-BY-NC rămân de clarificat de autor); SRI pentru scripturile jsDelivr nu a putut fi adăugat (fără rețea pentru calculul hash-urilor).
 
 ## Funcții noi (v1.1.0)
@@ -68,6 +70,11 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
 
 ## Istoric / Changelog
+
+### 1.2.5 — 2026-10-22
+- Securitate: Content-Security-Policy complet (`default-src 'none'`; scripturi doar cu hash-uri și de la `cdn.jsdelivr.net`; conexiuni doar către `cdn.jsdelivr.net`, `raw.githubusercontent.com` și `huggingface.co`/`hf.co`). Rămâne `'unsafe-eval'`, necesar pentru liblouis (grad 2), și `blob:`, necesar pentru pdf.js încorporat. Verificat: grad 2, PDF, OCR și blocarea gazdelor nelistate.
+- Transparență: gazdele externe declarate corespund acum celor reale (lipseau `raw.githubusercontent.com` pentru datele limbii OCR și `huggingface.co` pentru modelul de traducere).
+- Licențe: opțiune nouă în Setări care dezactivează tabelele de citire pentru chineză, cantoneză și japoneză (kanji) și o notă „Licențe și stare juridică” în aplicație (tradusă în 8 limbi). Stare: **în curs de rezolvare** de către autor, vezi mai jos.
 
 ### 1.2.4 — 2026-10-22
 - fff-kit 1.1.2: PBKDF2 600 000 iterații, protecție anti-clickjacking

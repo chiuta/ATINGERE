@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.2.4 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 1.2.5 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,10 +57,15 @@ Senza queste funzioni, l'applicazione non effettua richieste di rete.
 ## Licenza
 Codice proprio: MIT (vedi [LICENSE](LICENSE)). I componenti di terze parti (liblouis, pdf.js e altri) hanno licenze proprie; vedi [NOTICE.md](NOTICE.md). Alcune voci sono contrassegnate «da verificare» (la tabella dei kanji derivata da pykakasi, possibilmente GPL-3.0; le tabelle cinese/cantonese con fonte non documentata; il modello NLLB-200, CC-BY-NC, scaricato su richiesta) e devono essere chiarite dall'autore prima che la licenza MIT sia considerata definitiva.
 
+**Stato delle licenze (in via di chiarimento).** La tabella kanji → hiragana (giapponese) deriva da pykakasi (GPL-3.0) e la fonte delle tabelle pinyin (cinese) e jyutping (cantonese) non è documentata; la compatibilità con la licenza MIT non è ancora stabilita e **la licenza non è stata modificata**. Nel frattempo queste tabelle si possono disattivare dalle Impostazioni (il resto dell’app, kana e hangul compresi, non è toccato). Opzioni per l’autore: (1) rilasciare l’intero progetto sotto GPL-3.0; (2) sostituire le tabelle con dati permissivi o di pubblico dominio (es. CC0 / derivati da Unicode Unihan, con fonte documentata); (3) rimuovere le lingue interessate.
+
 Audit: 2026-10-10; round 2 (2026-10-11): avviso di validazione nella prima schermata; la licenza MIT e NOTICE.md sono rimasti invariati (i conflitti pykakasi/GPL, liblouis/LGPL e NLLB/CC-BY-NC restano da chiarire da parte dell'autore); non è stato possibile aggiungere SRI per gli script jsDelivr (nessuna rete per calcolare gli hash).
 
 ## Novità (v1.1.0)
 
+- 1.2.5 — 2026-10-22: Sicurezza: Content-Security-Policy completa (`default-src 'none'`; script solo con hash e da `cdn.jsdelivr.net`; connessioni solo verso `cdn.jsdelivr.net`, `raw.githubusercontent.com` e `huggingface.co`/`hf.co`). Restano `'unsafe-eval'`, necessario a liblouis (grado 2), e `blob:`, necessario al pdf.js incorporato. Verificato: grado 2, PDF, OCR e blocco degli host non elencati.
+  - Trasparenza: gli host esterni dichiarati ora corrispondono a quelli reali (mancavano `raw.githubusercontent.com` per i dati linguistici OCR e `huggingface.co` per il modello di traduzione).
+  - Licenze: nuova opzione nelle Impostazioni che disattiva le tabelle di lettura per cinese, cantonese e giapponese (kanji), e una nota «Licenze e stato giuridico» nell’app (tradotta in 8 lingue). Stato: **in via di chiarimento** da parte dell’autore, vedi sotto.
 - 1.2.4 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600.000 iterazioni, protezione anti-clickjacking
 - **Etichetta di trasparenza** (clic su `v 1.1.0 · 2026-10-14` nel piè di pagina, kit comune): mostra quale archiviazione locale usa l'applicazione (progressi, segnalibri, impostazioni) e che le funzioni di base non effettuano richieste di rete.
 - **Copia di sicurezza `.fff.json`** dei progressi di lettura, dei segnalibri e delle impostazioni (esportazione/importazione, facoltativamente cifrata con password; i libri stessi non sono inclusi).

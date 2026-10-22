@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.2.4 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 1.2.5 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,6 +57,8 @@ E funkciók nélkül az alkalmazás nem indít hálózati kéréseket.
 ## Licenc
 Saját kód: MIT (lásd [LICENSE](LICENSE)). A harmadik féltől származó összetevők (liblouis, pdf.js és mások) saját licenccel rendelkeznek; lásd [NOTICE.md](NOTICE.md). Az ottani bejegyzések közül néhány „ellenőrzendő” jelölésű (a pykakasiból származtatott kanjitábla, esetleg GPL-3.0; a dokumentálatlan forrású kínai/kantoni táblák; az NLLB-200 modell, CC-BY-NC, kérésre letöltve), és a szerzőnek tisztáznia kell őket, mielőtt az MIT licenc véglegesnek tekinthető.
 
+**Licencállapot (tisztázás alatt).** A kandzsi → hiragana tábla (japán) a pykakasiból (GPL-3.0) származik, a pinyin (kínai) és jyutping (kantoni) táblák forrása nincs dokumentálva; az MIT licenccel való összeegyeztethetőségük még nem tisztázott, és **a licenc nem változott**. Addig ezek a táblák a Beállításokban kikapcsolhatók (az alkalmazás többi része, a kanát és a hangult is beleértve, érintetlen). Lehetőségek a szerzőnek: (1) az egész projekt GPL-3.0 alá helyezése; (2) a táblák cseréje megengedő vagy közkincs adatokra (pl. CC0 / Unicode Unihan-ból származtatott, dokumentált forrással); (3) az érintett nyelvek eltávolítása.
+
 Audit: 2026-10-10; 2. kör (2026-10-11): érvényesítési figyelmeztetés az első képernyőn; az MIT licenc és a NOTICE.md változatlan maradt (a pykakasi/GPL, liblouis/LGPL és NLLB/CC-BY-NC ütközések tisztázása továbbra is a szerzőre vár); a jsDelivr-szkriptekhez nem sikerült SRI-t adni (nincs hálózat a hashek kiszámításához).
 
 ## Újdonságok (v1.1.0)
@@ -68,6 +70,11 @@ Audit: 2026-10-10; 2. kör (2026-10-11): érvényesítési figyelmeztetés az el
 - Tesztek: `tests/fff-r8.test.mjs` (letiltott hálózat, 1280 és 360 px, axe 0 szabálysértés az új párbeszédablakban). Korlát: az alkalmazást, mint korábban, nem tesztelték valódi érintőeszközökön.
 
 ## Előzmények / Changelog
+
+### 1.2.5 — 2026-10-22
+- Biztonság: teljes Content-Security-Policy (`default-src 'none'`; szkriptek csak hash-sel és a `cdn.jsdelivr.net`-ről; kapcsolatok csak a `cdn.jsdelivr.net`, `raw.githubusercontent.com` és `huggingface.co`/`hf.co` felé). Megmarad az `'unsafe-eval'` (a liblouishoz, 2. fokozat) és a `blob:` (a beágyazott pdf.js-hez). Ellenőrizve: 2. fokozat, PDF, OCR és a nem listázott gazdák blokkolása.
+- Átláthatóság: a deklarált külső gazdák most megegyeznek a valódiakkal (hiányzott a `raw.githubusercontent.com` az OCR nyelvi adataihoz és a `huggingface.co` a fordítómodellhez).
+- Licencek: új beállítás, amely kikapcsolja a kínai, kantoni és japán (kandzsi) olvasási táblákat, valamint „Licencek és jogi helyzet” megjegyzés az alkalmazásban (8 nyelvre lefordítva). Állapot: **tisztázás alatt** a szerzőnél, lásd alább.
 
 ### 1.2.4 — 2026-10-22
 - fff-kit 1.1.2: PBKDF2 600 000 iteráció, clickjacking elleni védelem

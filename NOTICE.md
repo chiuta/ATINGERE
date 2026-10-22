@@ -12,8 +12,8 @@ Licența MIT din `LICENSE` se aplică codului scris pentru ATINGERE. Componentel
 | [liblouis](https://liblouis.io/) 3.2.0 (build emscripten) și tabelele sale braille | Braille grad 2 (10 limbi) | LGPL-2.1-or-later | Licența și sursa sunt publice la liblouis.io. Pentru conformitate LGPL, sursa originală a părților liblouis este disponibilă la adresa proiectului. |
 | [pdf.js](https://mozilla.github.io/pdf.js/) 3.11.174 (Mozilla) | Citirea PDF-urilor offline | Apache-2.0 | Verificat. |
 | World Braille Usage, ed. a 3-a (UNESCO / Perkins) | Tabele de litere și punctuație pe limbă, transcrise manual | Informații factuale despre coduri braille; sursa este citată | De verificat dacă vrei redistribuire comercială. |
-| Tabele de citire pentru chineză și cantoneză (pinyin / jyutping) | Braille din pronunție | **Sursa exactă a datelor nu a fost documentată în proiect** | **De verificat înainte de publicare**: stabilește sursa și licența și completează aici. |
-| Tabel kanji → hiragana (derivat din pykakasi) | Japoneză | pykakasi este GPL-3.0, din câte știu; datele derivate pot purta aceleași condiții | **De verificat înainte de publicare.** Dacă licența GPL se aplică, fie declari aplicația GPL-3.0, fie înlocuiești tabelul. |
+| Tabele de citire pentru chineză și cantoneză (pinyin / jyutping) | Braille din pronunție | **Sursa exactă a datelor nu a fost documentată în proiect** | **În curs de rezolvare (decizia aparține autorului).** Stabilește sursa și licența și completează aici. Până atunci tabelele pot fi dezactivate din Setări. |
+| Tabel kanji → hiragana (derivat din pykakasi) | Japoneză | pykakasi este GPL-3.0, din câte știu; datele derivate pot purta aceleași condiții | **În curs de rezolvare (decizia aparține autorului).** Dacă licența GPL se aplică, fie declari aplicația GPL-3.0, fie înlocuiești tabelul cu date permisive/din domeniul public, fie scoți limba. Până atunci tabelul (și cel chinezesc/cantonez) poate fi dezactivat din Setări; licența MIT nu a fost schimbată. |
 | Abrevieri de silabe coreene | Coreeană | Din tabelul liblouis `ko-g2` | LGPL, ca liblouis. |
 
 ## Descărcate la cerere (nu sunt în fișier)

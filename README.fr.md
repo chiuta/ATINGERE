@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.2.4 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.2.5 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -57,6 +57,8 @@ Sans ces fonctions, l'application ne fait aucune requête réseau.
 ## Licence
 Code propre : MIT (voir [LICENSE](LICENSE)). Les composants tiers (liblouis, pdf.js et d'autres) ont leurs propres licences ; voir [NOTICE.md](NOTICE.md). Certaines entrées y sont marquées « à vérifier » (la table des kanji dérivée de pykakasi, possiblement GPL-3.0 ; les tables chinois/cantonais dont la source n'est pas documentée ; le modèle NLLB-200, CC-BY-NC, téléchargé à la demande) et doivent être clarifiées par l'auteur avant que la licence MIT soit considérée comme définitive.
 
+**Statut des licences (en cours de clarification).** La table kanji → hiragana (japonais) est dérivée de pykakasi (GPL-3.0) et la source des tables pinyin (chinois) et jyutping (cantonais) n’est pas documentée ; leur compatibilité avec la licence MIT n’est pas encore établie et **la licence n’a pas été modifiée**. D’ici là, ces tables peuvent être désactivées dans les Réglages (le reste de l’application, kana et hangul compris, n’est pas touché). Options pour l’auteur : (1) placer tout le projet sous GPL-3.0 ; (2) remplacer les tables par des données permissives ou du domaine public (p. ex. CC0 / dérivées d’Unicode Unihan, avec source documentée) ; (3) retirer les langues concernées.
+
 Audit : 2026-10-10 ; tour 2 (2026-10-11) : avertissement de validation sur le premier écran ; la licence MIT et NOTICE.md sont conservés inchangés (les conflits pykakasi/GPL, liblouis/LGPL et NLLB/CC-BY-NC restent à clarifier par l'auteur) ; le SRI pour les scripts jsDelivr n'a pas pu être ajouté (pas de réseau pour calculer les empreintes).
 
 ## Nouveautés (v1.1.0)
@@ -68,6 +70,11 @@ Audit : 2026-10-10 ; tour 2 (2026-10-11) : avertissement de validation sur le pr
 - Tests : `tests/fff-r8.test.mjs` (réseau bloqué, 1280 et 360 px, axe 0 violation dans la nouvelle boîte de dialogue). Limite : l'application n'a pas été testée sur de vrais appareils tactiles, comme auparavant.
 
 ## Historique / Changelog
+
+### 1.2.5 — 2026-10-22
+- Sécurité : Content-Security-Policy complète (`default-src 'none'` ; scripts uniquement par empreintes et depuis `cdn.jsdelivr.net` ; connexions uniquement vers `cdn.jsdelivr.net`, `raw.githubusercontent.com` et `huggingface.co`/`hf.co`). `'unsafe-eval'` reste, nécessaire à liblouis (grade 2), ainsi que `blob:`, nécessaire au pdf.js intégré. Vérifié : grade 2, PDF, OCR et blocage des hôtes non listés.
+- Transparence : les hôtes externes déclarés correspondent désormais aux hôtes réels (`raw.githubusercontent.com` pour les données de langue OCR et `huggingface.co` pour le modèle de traduction manquaient).
+- Licences : nouvelle option dans les Réglages qui désactive les tables de lecture du chinois, du cantonais et du japonais (kanji), et une note « Licences et statut juridique » dans l’application (traduite en 8 langues). État : **en cours de clarification** par l’auteur, voir ci-dessous.
 
 ### 1.2.4 — 2026-10-22
 - fff-kit 1.1.2 : PBKDF2 600 000 itérations, protection anti-clickjacking

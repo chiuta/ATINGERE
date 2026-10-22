@@ -62,7 +62,7 @@ ok(errs.length === 0, 'fără pageerror/CSP la pornire', errs); ok(net.length ==
   const b = await page.evaluate(async () => JSON.stringify(await FFF.bundle.build()));
   ok(/atingere\.p\.test/.test(b) && /"app":"atingere"/.test(b), 'copia .fff.json conține progresul de lectură', b.slice(0, 160));
   await page.evaluate(() => localStorage.removeItem('atingere.p.test'));
-  ok(await page.locator('#app-version').innerText().then(t => /v 1\.2\.4 · 2026-10-22/.test(t)), 'versiune afișată');
+  ok(await page.locator('#app-version').innerText().then(t => /v 1\.2\.5 · 2026-10-22/.test(t)), 'versiune afișată');
   await ctx.close();
 }
 ok(errs.length === 0, 'fără pageerror/CSP în tot setul', errs); ok(net.length === 0, '0 cereri de rețea în tot setul', net);
