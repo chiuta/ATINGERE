@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.2.1 · **Dernière mise à jour :** 2026-10-22
+**Version :** 1.2.2 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,9 @@ Audit : 2026-10-10 ; tour 2 (2026-10-11) : avertissement de validation sur le pr
 - Tests : `tests/fff-r8.test.mjs` (réseau bloqué, 1280 et 360 px, axe 0 violation dans la nouvelle boîte de dialogue). Limite : l'application n'a pas été testée sur de vrais appareils tactiles, comme auparavant.
 
 ## Historique / Changelog
+
+### 1.2.2 — 2026-10-22
+- suppression de l'avis de validation en anglais en double qui s'affichait sous l'interface roumaine (l'avis en roumain dit déjà la même chose).
 
 ### 1.2.1 — 2026-10-22
 - Le catalogue des sources de livres (noms, notes de prix et descriptions) et le titre de la page suivent désormais la langue de l'interface au lieu de rester en roumain.

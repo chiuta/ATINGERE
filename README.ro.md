@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.1 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.2.2 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,9 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Teste: `tests/fff-r8.test.mjs` (rețea blocată, 1280 și 360 px, axe 0 violări în dialogul nou). Limitare: aplicația nu a fost testată pe dispozitive tactile reale, ca înainte.
 
 ## Istoric / Changelog
+
+### 1.2.2 — 2026-10-22
+- eliminată nota duplicat în engleză („Notice: braille tables…”) afișată în interfața română (nota în română spune deja același lucru).
 
 ### 1.2.1 — 2026-10-22
 - Catalogul de surse de cărți (nume, note de preț și descrieri) și titlul paginii urmează acum limba interfeței, nu mai rămân în română.
