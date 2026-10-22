@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.2 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 1.2.3 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,11 @@ Audit: 2026-10-10; Runde 2 (2026-10-11): Validierungshinweis auf dem ersten Bild
 - Tests: `tests/fff-r8.test.mjs` (Netzwerk blockiert, 1280 und 360 px, axe 0 Verstöße im neuen Dialog). Einschränkung: Die App wurde wie zuvor nicht auf echten Touchgeräten getestet.
 
 ## Verlauf / Changelog
+
+### 1.2.3 — 2026-10-22
+- Barrierefreiheit: genau eine H1 pro Ansicht (die übrigen Titel sind H2 mit gleichem Aussehen); das Feld zum Einfügen des Textes hat jetzt einen zugänglichen Namen.
+- Der Schritt „Braille-Fehler melden“ nutzt keinen blockierenden Browser-Prompt mehr: Es öffnet sich ein Dialog in der App (in alle 8 Sprachen übersetzt).
+- Mobil: kleine Beschriftungen haben mindestens 12 px; Links in den Quellenlisten haben eine größere Tippfläche.
 
 ### 1.2.2 — 2026-10-22
 - die doppelte englische Validierungshinweis-Box in der rumänischen Oberfläche wurde entfernt (der rumänische Hinweis sagt bereits dasselbe).

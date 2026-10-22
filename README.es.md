@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.2 · **Última actualización:** 2026-10-22
+**Versión:** 1.2.3 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,11 @@ Auditoría: 2026-10-10; ronda 2 (2026-10-11): aviso de validación en la primera
 - Pruebas: `tests/fff-r8.test.mjs` (red bloqueada, 1280 y 360 px, axe 0 violaciones en el nuevo diálogo). Limitación: la aplicación no se ha probado en dispositivos táctiles reales, como antes.
 
 ## Historial / Changelog
+
+### 1.2.3 — 2026-10-22
+- Accesibilidad: un solo H1 por pantalla (los demás títulos son H2 con el mismo aspecto); el campo para pegar el texto tiene ahora un nombre accesible.
+- El paso «Informar de un error de braille» ya no usa un aviso bloqueante del navegador: se abre un cuadro de diálogo en la aplicación (traducido a los 8 idiomas).
+- Móvil: los subtítulos pequeños pasan a un mínimo de 12 px; los enlaces de las listas de fuentes tienen un área táctil mayor.
 
 ### 1.2.2 — 2026-10-22
 - eliminado el aviso de validación duplicado en inglés que se mostraba en la interfaz rumana (el aviso en rumano ya dice lo mismo).

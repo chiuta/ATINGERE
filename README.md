@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.2.2 · **Last updated:** 2026-10-22
+**Version:** 1.2.3 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -68,6 +68,11 @@ Audit: 2026-10-10; round 2 (2026-10-11): validation warning on the first screen;
 - Tests: `tests/fff-r8.test.mjs` (network blocked, 1280 and 360 px, axe 0 violations in the new dialog). Limitation: the app has not been tested on real touch devices, as before.
 
 ## History / Changelog
+
+### 1.2.3 — 2026-10-22
+- Accessibility: a single H1 per screen (the other titles are H2 with the same look); the paste-text field now has an accessible name.
+- The "Report a braille mistake" step no longer uses a blocking browser prompt: it opens an in-app dialog (translated into all 8 languages).
+- Mobile: small captions raised to at least 12 px; links in the source lists have a larger tap area.
 
 ### 1.2.2 — 2026-10-22
 - removed the duplicate English validation notice that was shown under the Romanian interface (the Romanian notice already says the same).
