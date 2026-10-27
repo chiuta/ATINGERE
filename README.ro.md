@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.3.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 1.4.0 · **Ultima actualizare:** 2026-10-27
 
 **Stare:** experimental · **Offline:** complet pentru funcțiile de bază; cere internet pentru datele de limbă OCR, comenzile vocale și traducerea automată
 
@@ -50,7 +50,7 @@ Tabelele braille **nu** au fost validate de cititori de braille și nicio organi
 
 ## Braille grad 2 și BRF: stare
 - Gradul 2 există pentru 10 limbi (en, fr, de, pt, no, da, hu, ga, cy, ur) prin liblouis 3.2.0; pentru toate celelalte limbi, inclusiv româna, aplicația produce grad 1. Gradul 2 pentru română nu este implementat: autorul nu cunoaște un cod românesc contractat standardizat (de verificat cu comunitatea braille).
-- Export `.brf`: celule pe rând și rânduri pe pagină configurabile (vezi mai sus). Alte setări de embosare (format hârtie, margini, față-verso, numerotarea paginilor) nu sunt gestionate de aplicație; se setează în programul imprimantei. Planificat: nimic programat.
+- Export `.brf`: celule pe rând și rânduri pe pagină configurabile (vezi mai sus). Din 1.4.0 există și o **margine stângă** opțională (0-6 celule goale) și un **număr de pagină braille** opțional (⠼ urmat de cifrele scrise cu literele a-j, aliniat la dreapta, sus sau jos; intră în rândurile pe pagină). Ambele sunt oprite implicit (fișierul rămâne identic cu cel de până acum) și se rețin în setări. Formatul hârtiei, aranjarea față-verso (interpoint), marginile de legare alternante pe pagini pare/impare și numerotarea paginilor tipărite ale cărții-sursă nu sunt gestionate de aplicație; se setează în programul imprimantei. Opțiunile au fost verificate doar prin teste automate (inclusiv exportul Unicode, care arată ⠼⠁ la pagina 1), nu pe o imprimantă sau un afișaj braille reale.
 
 ## Rapoarte de greșeli
 Dacă un cuvânt apare cu braille greșit, folosește în aplicație **⋯ → Raportează o greșeală de braille**, apoi atașează fișierul într-un *Issue*. Cel mai util este raportul unui cititor nativ de braille, cu limba, cuvântul și forma corectă.
