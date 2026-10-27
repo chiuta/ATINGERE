@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.2.9 · **Last updated:** 2026-10-26
+**Version:** 1.3.0 · **Last updated:** 2026-10-27
+
+**Status:** experimental · **Offline:** complete for the basic features; needs internet for OCR language data, voice commands and automatic translation
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -27,7 +29,7 @@ Converts any book (EPUB, TXT, HTML, DOCX, PDF, BRF, images) into tactile braille
 - **Braille:** over 130 languages; extended Romanian, with its own code. Grade 1 for all, **grade 2** for 10 languages (en, fr, de, pt, no, da, hu, ga, cy, ur) through liblouis.
 - **Tactile reading:** cell, word, paragraph, chapter; two adjacent cells; learning mode with tests; Perkins writing.
 - **Tools:** bookmarks, search, paragraph repeat, local extractive summary, the teacher page (text + braille, with a print button and a dedicated print style), emergency stop (shaking, Esc), high contrast, enlarged text, voice commands (in Romanian).
-- **Export:** `.brf` (40 × 25) and Unicode braille text.
+- **Export:** `.brf` (ASCII braille, pages separated by form feed, for braille embossers and displays) with **configurable page size** (cells per line 28-42, lines per page 20-28; default 40 × 25; the choice is remembered) and Unicode braille text. Not yet checked on a real embosser or display.
 - **Catalogue:** free sources of books in Romanian and other languages, plus sources of books already in braille.
 - **Automatic translation** into Romanian (optional, model downloaded once, ~700 MB).
 
@@ -42,6 +44,13 @@ OCR (the language data is downloaded once; the engine is included), voice comman
 - iPhone/iPad do not allow vibration from the browser. Use Android + Chrome or export `.brf`.
 - Voice commands and OCR were verified with simulations, not with real voice or scans over the internet.
 - Not implemented: hardware braille display (WebHID), offline neural voice, installable app (PWA).
+
+## Validation wanted (not done)
+The braille tables have **not** been validated by braille readers, and no organization has validated or endorsed the app. **There is no collaboration with the Romanian Association of the Blind (Asociația Nevăzătorilor din România) or any other association at this time**; validation by blind and deaf-blind readers, braille teachers and such organizations is wanted and welcome (see "Error reports" below). Until it happens, treat the output as unverified.
+
+## Braille grade 2 and BRF: status
+- Grade 2 exists for 10 languages (en, fr, de, pt, no, da, hu, ga, cy, ur) through liblouis 3.2.0; for all other languages, including Romanian, the app produces grade 1. A grade 2 for Romanian is not implemented: no standardized Romanian contracted code is known to the author (to be verified with the braille community).
+- `.brf` export: configurable cells per line and lines per page (see above). Other embosser settings (paper size, margins, double-sided layout, page numbers) are not handled by the app; set them in the embosser's software. Planned: nothing scheduled.
 
 ## Error reports
 If a word appears with wrong braille, use **⋯ → Report a braille error** in the app, then attach the file to an *Issue*. The most useful report is one from a native braille reader, with the language, the word and the correct form.
@@ -119,3 +128,7 @@ Audit: 2026-10-10; round 2 (2026-10-11): validation warning on the first screen;
 - Fixed: the export buttons (.BRF and Unicode braille text) are now visible directly on the main screen (step 3), not in a collapsed section.
 - Fixed: the language search field had a white background with light text (insufficient contrast); the Braille, Audio, Learn and Write screens now have a level-1 heading (0 axe-core violations at 1280 and 360 px, including after loading a text).
 - Unchanged (the author's decision): the licenses of the pykakasi/NLLB/liblouis components remain to be clarified; `new Function` (loading liblouis) is kept, needed for grade 2 braille.
+
+### 1.3.0 — 2026-10-27
+- New: the `.brf` export lets you choose the page size (cells per line 28-42, lines per page 20-28; default 40 × 25), remembered in the settings; the Perkins-writing `.brf` also uses it. Translated into 8 languages.
+- Documentation: "Validation wanted (not done)" and "Braille grade 2 and BRF: status" sections; "Status / Offline" lines.
