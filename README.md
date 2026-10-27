@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.3.0 · **Last updated:** 2026-10-27
+**Version:** 1.4.0 · **Last updated:** 2026-10-27
 
 **Status:** experimental · **Offline:** complete for the basic features; needs internet for OCR language data, voice commands and automatic translation
 
@@ -50,7 +50,7 @@ The braille tables have **not** been validated by braille readers, and no organi
 
 ## Braille grade 2 and BRF: status
 - Grade 2 exists for 10 languages (en, fr, de, pt, no, da, hu, ga, cy, ur) through liblouis 3.2.0; for all other languages, including Romanian, the app produces grade 1. A grade 2 for Romanian is not implemented: no standardized Romanian contracted code is known to the author (to be verified with the braille community).
-- `.brf` export: configurable cells per line and lines per page (see above). Other embosser settings (paper size, margins, double-sided layout, page numbers) are not handled by the app; set them in the embosser's software. Planned: nothing scheduled.
+- `.brf` export: configurable cells per line and lines per page (see above). Since 1.4.0 there are also an optional **left margin** (0-6 blank cells) and an optional **braille page number** (⠼ followed by the digits written with the letters a-j, right-aligned, at the top or at the bottom of the page; it counts inside the lines per page). Both are off by default (the file is then identical to before) and are remembered in the settings. Paper size, double-sided (interpoint) layout, binding margins that alternate between odd and even pages, and the print page numbers of the source book are not handled by the app; set them in the embosser's software. These options were checked only by automated tests (including the Unicode export, which shows ⠼⠁ for page 1), not on a real embosser or display.
 
 ## Error reports
 If a word appears with wrong braille, use **⋯ → Report a braille error** in the app, then attach the file to an *Issue*. The most useful report is one from a native braille reader, with the language, the word and the correct form.
