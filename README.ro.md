@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.9 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 1.3.0 · **Ultima actualizare:** 2026-10-27
+
+**Stare:** experimental · **Offline:** complet pentru funcțiile de bază; cere internet pentru datele de limbă OCR, comenzile vocale și traducerea automată
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -27,7 +29,7 @@ Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille 
 - **Braille:** peste 130 de limbi; română extinsă, cu cod propriu. Grad 1 pentru toate, **grad 2** pentru 10 limbi (en, fr, de, pt, no, da, hu, ga, cy, ur) prin liblouis.
 - **Citire tactilă:** celulă, cuvânt, paragraf, capitol; două celule alăturate; mod învățare cu teste; scriere Perkins.
 - **Instrumente:** semne de carte, căutare, repetarea paragrafului, rezumat extractiv local, pagina învățătorului (text + braille, cu buton de tipărire și stil de tipărire dedicat), oprire de urgență (scuturare, Esc), contrast mare, text mărit, comenzi vocale (în română).
-- **Export:** `.brf` (40 × 25) și text Unicode braille.
+- **Export:** `.brf` (braille ASCII, pagini separate prin salt de pagină, pentru imprimante de embosare și afișaje braille) cu **dimensiunea paginii configurabilă** (celule pe rând 28-42, rânduri pe pagină 20-28; implicit 40 × 25; alegerea este reținută) și text Unicode braille. Nu a fost verificat încă pe o imprimantă sau un afișaj reale.
 - **Catalog:** surse gratuite de cărți în română și în alte limbi, plus surse de cărți deja în braille.
 - **Traducere automată** în română (opțional, model descărcat o dată, ~700 MB).
 
@@ -42,6 +44,13 @@ OCR (datele limbii se descarcă o dată; motorul este inclus), comenzile vocale 
 - iPhone/iPad nu permit vibrații din browser. Folosește Android + Chrome sau exportă `.brf`.
 - Comenzile vocale și OCR-ul au fost verificate cu simulări, nu cu voce sau scanări reale pe internet.
 - Neimplementat: afișaj braille hardware (WebHID), voce neurală offline, aplicație instalabilă (PWA).
+
+## Validare dorită (nefăcută)
+Tabelele braille **nu** au fost validate de cititori de braille și nicio organizație nu a validat sau susținut aplicația. **În prezent nu există nicio colaborare cu Asociația Nevăzătorilor din România sau cu altă asociație**; validarea de către cititori nevăzători și surdo-orbi, profesori de braille și astfel de organizații este dorită și binevenită (vezi „Rapoarte de greșeli” mai jos). Până atunci, consideră rezultatul neverificat.
+
+## Braille grad 2 și BRF: stare
+- Gradul 2 există pentru 10 limbi (en, fr, de, pt, no, da, hu, ga, cy, ur) prin liblouis 3.2.0; pentru toate celelalte limbi, inclusiv româna, aplicația produce grad 1. Gradul 2 pentru română nu este implementat: autorul nu cunoaște un cod românesc contractat standardizat (de verificat cu comunitatea braille).
+- Export `.brf`: celule pe rând și rânduri pe pagină configurabile (vezi mai sus). Alte setări de embosare (format hârtie, margini, față-verso, numerotarea paginilor) nu sunt gestionate de aplicație; se setează în programul imprimantei. Planificat: nimic programat.
 
 ## Rapoarte de greșeli
 Dacă un cuvânt apare cu braille greșit, folosește în aplicație **⋯ → Raportează o greșeală de braille**, apoi atașează fișierul într-un *Issue*. Cel mai util este raportul unui cititor nativ de braille, cu limba, cuvântul și forma corectă.
@@ -120,3 +129,7 @@ Audit: 2026-10-10; rundă 2 (2026-10-11): avertisment de validare pe primul ecra
 - Reparat: câmpul de căutare a limbii avea fundal alb cu text deschis (contrast insuficient); ecranele Braille, Audio, Învață și Scrie au acum titlu de nivel 1 (0 violări axe-core la 1280 și 360 px, inclusiv după încărcarea unui text).
 - Neschimbat (decizia autorului): licențele componentelor pykakasi/NLLB/liblouis rămân de clarificat; `new Function` (încărcarea liblouis) este păstrat, necesar pentru braille grad 2.
 
+
+### 1.3.0 — 2026-10-27
+- Nou: exportul `.brf` permite alegerea dimensiunii paginii (celule pe rând 28-42, rânduri pe pagină 20-28; implicit 40 × 25), reținută în setări; `.brf`-ul din scrierea Perkins o folosește și el. Tradus în 8 limbi.
+- Documentare: secțiunile „Validare dorită (nefăcută)” și „Braille grad 2 și BRF: stare”; liniile „Stare / Offline”.

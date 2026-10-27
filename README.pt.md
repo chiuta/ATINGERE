@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.2.9 · **Última atualização:** 2026-10-26
+**Versão:** 1.3.0 · **Última atualização:** 2026-10-27
+
+**Estado:** experimental · **Offline:** completo para as funções básicas; requer Internet para os dados de idioma do OCR, os comandos de voz e a tradução automática
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
