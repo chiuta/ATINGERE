@@ -50,8 +50,8 @@
   "storageKeys": [
     "atingere.ui"
   ],
-  "sizeBytes": 2091826,
-  "sha256": "c61d6a7447287dfc36567f341de6378c4294c2efc5069b9959c9fef3bc5a389e",
+  "sizeBytes": 2232260,
+  "sha256": "b37bd9444ae4a199aca0acd6667d2cd43975b722695dc5fc359de1393c775b29",
   "csp": {
     "present": true,
     "directives": {
@@ -94,6 +94,10 @@
       "dialog",
       "label",
       "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history",
       "bridge"
     ]
   },
@@ -105,6 +109,10 @@
       "dialog",
       "label",
       "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history",
       "bridge"
     ]
   },
