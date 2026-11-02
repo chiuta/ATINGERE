@@ -2,7 +2,7 @@
   "schema": 1,
   "slug": "atingere",
   "name": "ATINGERE — cărți în braille tactil și audiobook",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "updated": "2026-11-02",
   "description": "Convertește orice carte (EPUB, TXT, HTML, DOCX, PDF, BRF, imagini) în braille tactil pentru persoane surdo-oarbe sau în audiobook pentru nevăzători. Un singur fișier HTML, fără cont.",
   "egress": [
@@ -50,8 +50,8 @@
   "storageKeys": [
     "atingere.ui"
   ],
-  "sizeBytes": 2091838,
-  "sha256": "ada45325d98d78026f7ec9945f3cf80c296e3333e323dbb1ee7c0f5327aaac25",
+  "sizeBytes": 2091826,
+  "sha256": "c61d6a7447287dfc36567f341de6378c4294c2efc5069b9959c9fef3bc5a389e",
   "csp": {
     "present": true,
     "directives": {

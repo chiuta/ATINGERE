@@ -1,4 +1,4 @@
-// Test 1.5.0: margine stângă și număr de pagină braille (⠼ + cifre) la exportul .BRF / text Unicode. Playwright, rețea nefolosită.
+// Test 1.5.1: margine stângă și număr de pagină braille (⠼ + cifre) la exportul .BRF / text Unicode. Playwright, rețea nefolosită.
 // Rulare: node tests/brf-margin.test.mjs   (PW_ROOT=<director cu node_modules/playwright> dacă playwright nu e instalat local)
 import {createRequire} from 'module';
 import fs from 'node:fs';
