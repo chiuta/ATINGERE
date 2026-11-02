@@ -50,8 +50,8 @@
   "storageKeys": [
     "atingere.ui"
   ],
-  "sizeBytes": 2091795,
-  "sha256": "182868cc6b89fe544e7edd76cb771e2da1919bb701e13b21c6f589ba5140f5da",
+  "sizeBytes": 2091838,
+  "sha256": "ada45325d98d78026f7ec9945f3cf80c296e3333e323dbb1ee7c0f5327aaac25",
   "csp": {
     "present": true,
     "directives": {
