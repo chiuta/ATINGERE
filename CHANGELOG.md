@@ -1,5 +1,9 @@
 # Jurnal de modificări — ATINGERE
 
+## 1.5.0 — 2026-11-01
+
+Nou: «Trimite la…» (fff-kit, modulul FFF.bridge) — după orice export de fișier (GPX, ICS, CSV, Markdown) apare butonul «Trimite la…» către aplicațiile compatibile, iar importul de fișiere al aplicației primește plicuri .fff.json trimise de ele, cu confirmare înainte de import. Fără rețea, fără telemetrie.
+
 ## 1.4.0 — 2026-10-27 (anterior: 1.3.0)
 - Nou, opțional (oprit implicit; fără ele fișierul .BRF/Unicode rămâne identic): **margine stângă** de 0–6 celule goale și **număr de pagină braille** (⠼ + cifre a–j) sus sau jos, în dreapta, la exportul `.BRF`, la textul Unicode și la `.brf`-ul din ecranul de scriere Perkins. Numărul intră în rândurile pe pagină; pe pagină jos, paginile sunt completate cu rânduri goale până la ultimul rând. Se rețin în setări. Conversia braille și tabelele NU s-au atins.
 - Texte noi în ro și în cele 7 limbi cu dicționar (en, fr, it, es, pt, de, hu; traduceri automate, neverificate de vorbitori nativi).
