@@ -1,5 +1,10 @@
 # Jurnal de modificări — ATINGERE
 
+## 1.5.1 — 2026-11-02
+
+### Surse actualizate (runda 2, verificat la 2026-11-02)
+- Pontes: `pontes.ro/ro/carti/index.php` -> `https://biblioteca.pontes.ro` (adresa „Biblioteca Pontes” din meniul site-ului Pontes).
+
 ## 1.5.0 — 2026-11-01
 
 - Corectat: adaptorul «Trimite la…» nu mai aruncă eroare când kitul FFF lipsește (gardian pe fiecare bloc; găsit de testul «fără kit» din CI).
