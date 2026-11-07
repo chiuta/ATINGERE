@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.5.3 · **Dernière mise à jour :** 2026-11-03
+**Version :** 1.5.4 · **Dernière mise à jour :** 2026-11-07
 
 **État :** expérimental · **Hors ligne :** complet pour les fonctions de base ; demande Internet pour les données de langue de l'OCR, les commandes vocales et la traduction automatique
 

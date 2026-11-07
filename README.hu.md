@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.5.3 · **Utolsó frissítés:** 2026-11-03
+**Verzió:** 1.5.4 · **Utolsó frissítés:** 2026-11-07
 
 **Állapot:** kísérleti · **Offline:** az alapfunkciókhoz teljes; internetet igényel az OCR nyelvi adataihoz, a hangparancsokhoz és az automatikus fordításhoz
 
