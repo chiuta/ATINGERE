@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.5.5 · **Ultima actualizare:** 2026-11-08
+**Versiune:** 1.5.6 · **Ultima actualizare:** 2026-11-08
 
 **Stare:** experimental · **Offline:** complet pentru funcțiile de bază; cere internet pentru datele de limbă OCR, comenzile vocale și traducerea automată
 

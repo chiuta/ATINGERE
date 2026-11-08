@@ -1,5 +1,8 @@
 # Jurnal de modificări — ATINGERE
 
+## 1.5.6 — 2026-11-08
+Glosar: BRF — «implicit 40 de celule × 25 de rânduri; dimensiunea se poate configura» (în loc de «aici 40 × 25»), în 8 limbi.
+
 ## 1.5.3 — 2026-11-03
 
 Destinații «Trimite către…» pentru pașaportul de învățare: adăugate FENARIUM și MENSURA (registrul de aplicații-țintă reinjectat din hub).
