@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.5.8 · **Última atualização:** 2026-11-10
+**Versão:** 1.5.9 · **Última atualização:** 2026-11-10
 
 **Estado:** experimental · **Offline:** completo para as funções básicas; requer Internet para os dados de idioma do OCR, os comandos de voz e a tradução automática
 
