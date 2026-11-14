@@ -46,18 +46,19 @@
     "indexedDB",
     "localStorage",
     "Web Crypto",
+    "WebGL",
     "BroadcastChannel"
   ],
   "storageKeys": [
     "atingere.ui"
   ],
-  "sizeBytes": 2363276,
-  "sha256": "0b2caffbc7158c84dc1ace43c01c2cf23565f5d2c6dff28d43c0497b545a817f",
+  "sizeBytes": 2415162,
+  "sha256": "c6b7c24fa7ab80da98e9d3f12d620b8c6fa6b34a1ce0b42be79006f5df17110a",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'none'",
-      "script-src": "'wasm-unsafe-eval' 'unsafe-eval' 'self' blob: sha256×8",
+      "script-src": "'wasm-unsafe-eval' 'unsafe-eval' 'self' blob: sha256×9",
       "style-src": "'unsafe-inline'",
       "img-src": "'self' data: blob:",
       "media-src": "blob: data:",
