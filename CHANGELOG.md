@@ -1,5 +1,9 @@
 # Jurnal de modificări — ATINGERE
 
+## 1.5.11 — 2026-11-15
+
+- Nou: texturi fractale hiper-detaliate (fff-texturi 1.1.2) — fundalul și suprafețele mari (carduri, panouri, antete, butoane; filele și dialogurile ascunse la încărcare, când se deschid) primesc un material generat local (WebGL2, fără rețea și fără imagini), care se repetă fără cusătură; culorile aplicației rămân ale ei. Se oprește din dialogul „Transparență” sau cu `?notex=1`.
+
 ## 1.5.6 — 2026-11-08
 Glosar: BRF — «implicit 40 de celule × 25 de rânduri; dimensiunea se poate configura» (în loc de «aici 40 × 25»), în 8 limbi.
 
